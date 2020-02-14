@@ -1,0 +1,51 @@
+a { 
+    text-decoration: none; 
+    color: inherit;  
+}
+
+a:hover {
+    color: khaki;
+}
+
+* {
+    font-family: 'Bebas Neue', cursive;
+}
+body {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+.menu {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5vh 5vw 5vh 20vw;
+    font-size: 2em;
+}
+
+#logo {
+    margin: 0 0 0 -15vw;
+}
+
+.footer {
+	background-color: black;
+	padding: 24px;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center
+  }
+
+
+
+  .list-inline {
+	list-style: none;
+	padding-left: 0px;
+  }
+  .list-inline li {
+	display: inline;
+	padding: 0px 8px;
+  }
+
+
+
