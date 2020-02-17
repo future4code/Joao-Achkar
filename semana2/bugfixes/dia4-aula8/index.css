@@ -20,6 +20,10 @@ h2 {
 input {
     height: 20px;
     width: 500px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: black solid 0.5px;
 }
 
 button:focus {
@@ -120,6 +124,9 @@ td button {
 
 td button:hover {
     background-color: #c4ad31;
+    cursor: pointer;
+    
+    
 }
 
 .container-do-search {
