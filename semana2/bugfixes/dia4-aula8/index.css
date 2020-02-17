@@ -59,6 +59,8 @@ div img {
 
 .icone {
     height: 15px;
+    width: 15px;
+    background-color: white;
 }
 
 
@@ -106,6 +108,7 @@ table {
     width: 60%;
     margin: 0 auto;
 }
+
 
 td button {
     background-color: #fadf63;
