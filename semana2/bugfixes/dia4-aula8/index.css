@@ -66,6 +66,11 @@ div img {
     width: 15px;
     background-color: white;
 }
+.icone:hover {
+    cursor: pointer;
+    background-color: blueviolet;
+    opacity: 100%;
+}
 
 
 /** 
