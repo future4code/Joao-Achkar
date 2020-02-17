@@ -113,6 +113,10 @@ table {
     margin: 0 auto;
 }
 
+td {
+    text-align: center;
+}
+
 
 td button {
     background-color: #fadf63;
