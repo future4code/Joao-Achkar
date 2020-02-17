@@ -81,6 +81,9 @@ div img {
   *  ESTILOS HOME 
   *
   **/
+  ol{
+    display:inline-block;
+}
 
 #container-de-descricao {
     background-color: #2274a5;
