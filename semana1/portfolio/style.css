@@ -1,0 +1,42 @@
+body {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    background-color: black;
+    color: blanchedalmond;
+    font-family: "Montserrat", sans-serif;
+}
+
+.header {
+    background-color: darkgray;
+    opacity: 90%;
+    height: 150px;
+    width: 100vw;
+}
+span {
+    display: inline-flex;
+}
+
+#img-perfil { 
+    padding-left: 5vw;
+}
+
+.menu-inline {
+    list-style: none;
+}
+.menu-inline li {
+	display: inline;
+	padding: 0px 8px;    
+}
+
+  .list-inline {
+	list-style: none;
+	padding-left: 0px;
+  }
+  .list-inline li {
+	display: inline;
+	padding: 0px 8px;
+  }
+a {
+    color: blanchedalmond; 
+    text-decoration: none;
+}
