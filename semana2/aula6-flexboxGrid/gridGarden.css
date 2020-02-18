@@ -1,0 +1,85 @@
+lvl 1
+grid-column-start: 3;
+
+lvl 2
+grid-column-start: 5;
+
+lvl 3
+grid-column-end: 4;
+
+lvl 4
+grid-column-end: 2;
+
+lvl 5
+grid-column-end: -2;
+
+lvl 6
+grid-column-start: -3;
+
+lvl 7
+grid-column-end: span 2;
+
+lvl 8
+grid-column-end: span 5;
+
+lvl 9
+grid-column-start: span 3;
+
+lvl 10
+grid-column: 4/6;
+
+lvl 11
+grid-column: 2/5;
+
+lvl 12
+grid-row-start: 3;
+
+lvl 13
+grid-row: 3/6;
+
+lvl 14
+grid-column: 2;
+grid-row: 5;
+
+lvl 15
+grid-column: 2/6;
+grid-row: 1/6;
+
+lvl 16
+grid-area: 1/2/4/6;
+
+lvl 17
+grid-area: 2/3/5/6;
+
+lvl 18
+order: 4;
+
+lvl 19
+order: -1;
+
+lvl 20
+grid-template-columns: 50% 25% 25%;
+
+lvl 21
+grid-template-columns: repeat(8, 12.5%);
+
+lvl 22 
+grid-template-columns: 100px 3em 40%;
+
+lvl 23
+grid-template-columns: 1fr 5fr;
+
+lvl 24
+grid-template-columns: 50px 1fr 1fr 1fr 50px;
+
+lvl 25
+grid-template-columns: 75px 3fr  2fr;
+
+lvl 26
+grid-template-rows: 50px 0fr 0fr 0fr;
+
+lvl 27
+grid-template:  60% 40% / 200px;
+
+lvl 28
+grid-template: 1fr 50px / 20% 80%;
