@@ -1,0 +1,64 @@
+body {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+.containers {
+    border: solid 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+#vermelho {
+    background-color: red;
+    min-width: 100%;
+    height: 100px;
+    margin: 0 0 5px 0;
+}
+
+#firstcontainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#azul {
+    width: 33vw;
+    height: 100px;
+    background-color: blue;
+}
+#amarelo {
+    width: 33vw;
+    height: 100px;
+    background-color: yellow;
+}
+#verde {
+    width: 33vw;
+    height: 100px;
+    background-color: green;
+}
+
+#scndcontainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#preto {
+    width: 50vw;
+    height: 40vh;
+    color: white;
+    background-color: black;
+}
+
+#trdcontainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#branco {
+    background-color: white;
+    width: 33vw;
+    height: 100px;
+}
