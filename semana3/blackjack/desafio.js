@@ -1,6 +1,70 @@
 import comprarCarta from './naoMexer.js'
 // NÃO REMOVA ESTA LINHA
 
+
+
+
+
+
+
+console.log("Bem vindo ao jogo de Blackjack!")
+
+
+
+if(confirm("Quer iniciar uma nova rodada?")) {
+   let carta = comprarCarta()
+
+   let user1 = (carta.valor + carta.valor)
+   let user2 = (carta.valor + carta.valor)
+
+
+
+ if (confirm("Suas cartas são " + carta.texto + carta.texto + ". A carta revelada do computador é " + carta.texto + ". Deseja comprar mais uma carta?")) {
+    
+   
+   confirm("Suas cartas são " + carta.texto + carta.texto + carta.texto + ". A carta revelada do computador é " + carta1User2.texto + ". Deseja comprar mais uma carta?")
+   let user1rodada2 = (carta.valor + carta.valor + carta.valor)
+   let user2rodada2 = (carta.valor + carta.valor)
+   if (user1 === user2) {
+      alert("Suas cartas são " + carta.texto + carta.texto + ". Sua pontuação é " + (carta.valor + carta.valor) + ". As cartas do computador são " + carta.texto + carta.texto + ". A pontuação do computador é " + (carta.valor + carta.valor) + ". O jogo deu empate!") 
+       } else
+   if (user1rodada2 > user2rodada2) {
+      alert("Suas cartas são " + carta.texto + carta.texto + carta.texto + ". Sua pontuação é " + (carta.valor + carta.valor + carta.valor) + ". As cartas do computador são " + carta.texto + carta.texto + ". A pontuação do computador é " + (carta.valor + carta.valor) + ". O usuário ganhou!") 
+   } else {
+   alert("Suas cartas são " + carta.texto + carta.texto + ". Sua pontuação é " + (carta.valor + carta.valor) + ". As cartas do computador são " + carta.texto + carta.texto + ". A pontuação do computador é " + (carta.valor + carta.valor) + ". O computador ganhou!") 
+}  
+
+} else 
+if (user1 === user2) {
+   alert("Suas cartas são " + carta.texto + carta.texto + ". Sua pontuação é " + (carta.valor + carta.valor) + ". As cartas do computador são " + carta.texto + carta.texto + ". A pontuação do computador é " + (carta.valor + carta.valor) + ". O jogo deu empate!") 
+    }
+ else if (user1 > user2) {
+             alert("Suas cartas são " + carta.texto + carta.texto + ". Sua pontuação é " + (carta.valor + carta.valor) + ". As cartas do computador são " + carta.texto + carta.texto + ". A pontuação do computador é " + (carta.valor + carta.valor) + ". O usuário ganhou!") 
+      }else {
+       alert("Suas cartas são " + carta.texto + carta.texto + ". Sua pontuação é " + (carta.valor + carta.valor) + ". As cartas do computador são " + carta.texto + carta.texto + ". A pontuação do computador é " + (carta.valor + carta.valor) + ". O computador ganhou!") 
+  }  
+}
+ else {
+	console.log("O jogo acabou!")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 console.log("Bem vindo ao jogo de Blackjack!")
 
 
@@ -44,7 +108,7 @@ if (user1 === user2) {
  else {
 	console.log("O jogo acabou!")
 }
-
+*/
 
 
 /**
