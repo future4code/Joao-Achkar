@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="index.js" defer></script>
+    <link href="index.css" type="text/css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+<header>
+    <h1>Agenda semanal</h1>
+    <div id="addTarefa">
+        <label for="tarefa">Adicionar Tarefa:</label>
+        <input type="text">
+        <select name="diaDaSemana" id="diaDaSemana">
+            <option value="segunda">Segunda-Feira</option>
+            <option value="terca">Terça-Feira</option>
+            <option value="quarta">Quarta-Feira</option>
+            <option value="quinta">Quinta-Feira</option>
+            <option value="sexta">Sexta-Feira</option>
+            <option value="sabado">Sábado</option>
+            <option value="domingo">Domingo</option>
+        </select>
+        <button onclick="insereTarefa()">Criar tarefa!</button>
+    </div>
+</header>
+
+<section>
+  <div class="dia" id="segunda"> <p> Segunda</p>   </div>
+  <div class="dia" id="terca"><p>Terça</p>  </div>
+  <div class="dia" id="quarta"><p>Quarta</p>  </div>
+  <div class="dia" id="quinta"><p>Quinta</p>  </div>
+  <div class="dia" id="sexta"><p>Sexta </p> </div>
+  <div class="dia" id="sabado"><p>Sábado</p>  </div>
+  <div class="dia" id="domingo"><p>Domingo</p>  </div>
+</section>
+
+  </body>
+</html>
