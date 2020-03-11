@@ -12,18 +12,26 @@
   <body>
 
     <form class="submission-form" action="#">
-      <label for="titulo-post">Título do Post</label>
-      <input type="text" id="titulo-post">
-
-      <label for="autor">Autor</label>
-      <input type="text" id="autor">
+      <label for="titulo">Título do Post</label>
+      <input type="text" id="titulo">
 
       <label for="texto">Excreva aqui seu texto</label>
       <textarea name="texto" id="texto" cols="30" rows="10"></textarea>
-        <input type="submit" value="Publicar" id="enviar">
+        
+      <label for="autor">Autor</label>
+      <input type="text" id="autor">
 
+      <button onclick="onClickButton()"  id="enviar">Publicar</button>
 
     </form>
+
+    <section id="espacoPost">
+      <div id="tituloPost"></div>
+      <div id="textoPost"></div>
+      <div id="autorPost"></div>
+
+
+    </section>
 
   </body>
 </html>
