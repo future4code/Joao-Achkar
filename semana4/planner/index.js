@@ -2,18 +2,17 @@ function insereTarefa() {
     const input = document.querySelector("input")
     const novoItemDaLista = input.value
     const diaDaSemana = document.querySelector("select").value
-
+    // function riscarTarefa(){
+    //     listaTarefas.innerHTML += 
+    // }
     if (novoItemDaLista === "") {
         alert("Insira uma tarefa")
     } else {
-         function riscarTarefa(){
-                    listaTarefas.innerHTML += "<li><strike>" + novoItemDaLista + "</strike></li>"
-                }
+
         switch (diaDaSemana) {
             case "segunda": {
                 const listaTarefas = document.getElementById("segunda")
-                listaTarefas.innerHTML += "<li onclick='riscarTarefa()'>" + novoItemDaLista + "</li>"
-               
+                listaTarefas.innerHTML += "<li onClick='riscarTarefa(this)'>" + novoItemDaLista + "</li>"
                 break;
             }
             case "terca": {
@@ -47,10 +46,12 @@ function insereTarefa() {
                 break;
             }
 
-            default:
-                break;
+ 
         }
  
     }
    input.value = ""
 }
+const done = riscarTarefa => {
+     li.style.textDecoration = "line-through"
+ }
