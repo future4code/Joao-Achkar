@@ -50,7 +50,8 @@
 const arrayOriginal = [23, 4, 45, 22, 76, 21, 19, 8]
 let number = 0
 arrayOriginal.forEach (let i in arrayOriginal) {
-}*/
+} sei fazer isso não
+*/
 
 //Maneira 2: Usando for para percorrer e devolver o maior número em um array
 /*const arrayOriginal = [23, 4, 45, 22, 76, 21, 19, 8]
@@ -76,6 +77,30 @@ for (let num of arrayOriginal) {
 }
 console.log(menor)
 */
+
+//2. Para este exercício considere as seguintes variáveis:
+
+// const booleano1 = true
+// const booleano2 = false
+// const booleano3 = !booleano2
+// const booleano4 = !booleano3 
+
+//Sem rodar nenhum código, diga quais são os valores das expressões lógicas abaixo:
+
+// a) booleano1 && booleano2 && !booleano4
+// False
+
+// b) (booleano1 && booleano2) || !booleano3
+// False
+
+// c) (booleano2 || booleano3) && (booleano4 || booleano1)
+// False
+
+// d) !(booleano2 && booleano3) || !(booleano1 && booleano3)
+//  True
+
+// e) !(booleano1) && !(booleano3) || (!booleano4 && booleano3 && booleano3)
+// True
 
 ///////////// FIM EXERCÍCIOS DE LÓGICA DE PROGRAMAÇÃO ////////////////////
 
