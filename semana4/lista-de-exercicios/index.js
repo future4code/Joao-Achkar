@@ -36,34 +36,46 @@
 //console.log (numero1) ---> 10
 //console.log (numero2) ---> 1590
 
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ///////////// FIM EXERCÍCIOS DE INTERPRETAÇÃO DE CÓDIGO ////////////////////
+
+
+/////////// INÍCIO EXERCÍCIOS DE LÓGICA DE PROGRAMAÇÃO ////////////////////
+
+//1. Cite 3 maneiras de se percorrer/iterar uma lista. Faça um programa para exemplificar.
+
+//Lista exemplo: const arrayOriginal = [23, 4, 45, 22, 76, 21, 19, 8]
+
+//Maneira 1: Usando for each:  
+/*
+const arrayOriginal = [23, 4, 45, 22, 76, 21, 19, 8]
+let number = 0
+arrayOriginal.forEach (let i in arrayOriginal) {
+}*/
+
+//Maneira 2: Usando for para percorrer e devolver o maior número em um array
+/*const arrayOriginal = [23, 4, 45, 22, 76, 21, 19, 8]
+let maior = arrayOriginal [0]
+
+for (let i = 0; i < arrayOriginal.length; i++) {
+    const elemento = arrayOriginal[i];
+
+    if (elemento > maior) {
+        maior = elemento
+    }
+}
+console.log(maior)*/
+
+//Maneira 3: Usando o for of para percorrer e devolver o menor número em um array
+/*
+const arrayOriginal = [23, 4, 45, 22, 76, 21, 19, 8]
+let menor = Infinity
+for (let num of arrayOriginal) {
+    if(num < menor) {
+        menor = num
+    }
+}
+console.log(menor)
+*/
+
+///////////// FIM EXERCÍCIOS DE LÓGICA DE PROGRAMAÇÃO ////////////////////
+
