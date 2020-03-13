@@ -4,6 +4,7 @@
 //(conversorDeMoeda(100)) pela cotação do dólar inserida no prompt, retornando a cifra em 
 //R$ dessa conversão.  O console.log(meuDinheiro) vai imprimir no console, caso o valor inserido
 //no prompt seja 5, e o parâmetro seja = 100:
+
 // R$ 500
 
 
@@ -12,6 +13,7 @@
 //investimentos que satisfaça a função, o código emite um alerta dizendo que o tipo de investimento
 //informado é incorreto.
 //Com  console.log(novoMontante)  e console.log(segundoMontante), será impresso no console: 
+
 //  165
 // "TIPO DE INVESTIMENTO INFORMADO INCORRETO"
 
@@ -28,7 +30,12 @@
 //console.log(array1.length) ---> 6
 //console.log(array2.length) ---> 8
 
-//4. 
+//4. O código em questão percorre o array com um for of, que verifica qual o maior e menor número
+//do array 'numeros'. 
+
+//console.log (numero1) ---> 10
+//console.log (numero2) ---> 1590
+
  
 
 
