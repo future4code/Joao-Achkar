@@ -1,13 +1,13 @@
-
+/*
 function clickCriaDespesa() {
     const valorDespesa = document.getElementById("valor").value
     const tipoDespesa = document.getElementById("tipoDespesa").value
     const descricaoDespesa = document.getElementById("descricao").value
-    if ((valorDespesa === "") && (descricaoDespesa === "")) {
+    if ((valorDespesa === "") || (descricaoDespesa === "")) {
         alert("Preencha os todos os campos de despesa")
     }
 }
-
+*/
 
 /*
 
@@ -51,3 +51,5 @@ function criaPost(itemPost) {
         "</div>"
 }
 */
+
+console.log("opa")
