@@ -135,6 +135,73 @@ let i = 0
 */
 
 
-//
+//4. Vocês lembram de trigonometria? (Oh, não, trigonometria). Relaxem. O exercício é simples, mas mexe com isso. 
+//Veja bem: quando nos ensinam triângulos (uma figura de três lados), nós aprendemos como classifica-los 
+//dependendo do tamanho de seus lados. Se um triângulo possuir os três lados iguais, ele é chamado de 
+//"Equilátero". Se possuir, dois (e somente 2) lados iguais, diz-se que ele é "Isósceles". Se os três lados 
+//tiverem medidas diferentes, ele é "Escaleno". Faça uma função que receba como parâmetro os tamanhos dos 
+//três lados do triângulo: a, b, c  e retorne se ele é equilátero, isósceles ou escaleno.
+/*
+function classificaTriangulo(ladoA, ladoB, ladoC) {
+    if ((ladoA === ladoB) && (ladoB !== ladoC) ) {
+        return classificaTriangulo = "O trinângulo é Isóceles"       
+    } else if ((ladoA === ladoB) && (ladoB === ladoC)) {
+        return classificaTriangulo = "O triângulo é Equilátero"
+    } else if ((ladoA !== ladoB) && (ladoB !== ladoC) && (ladoC !== ladoA)) {
+        return classificaTriangulo = "O triângulo é Escaleno"
+    }
+    
+}
+
+console.log(classificaTriangulo(5, 5, 5))
+*/
+
+//5. Faça um programa que, dados dois números,
+// i. indique qual é o maior,
+// ii. determine se eles são divisíveis um pelo outro (use o operador %) e
+// iii. determine a diferença entre eles (o resultado deve ser um número positivo sempre)
+/*
+compara(4, 20)
+function compara (a, b) {
+    let numeroMaior = a
+    let numeroMenor = b
+    if (a === b) {
+        console.log("Os números " + a + " e " + b + " são iguais")
+    } else { if (a > b) {
+        console.log("O maior é " + a)
+        numeroMaior = a
+        numeroMenor = b
+    } else {
+        console.log("O maior é " + b)
+        numeroMaior = b
+        numeroMenor = a
+    }     
+}
+divide(numeroMaior, numeroMenor)
+}
+
+function divide(numeroMaior, numeroMenor) {
+    if (numeroMaior % numeroMenor === 0) {
+        console.log(numeroMaior + " é divisível por " + numeroMenor)
+    }
+        if (numeroMenor % numeroMaior === 0) {
+            console.log(numeroMenor + " é divisível por " + numeroMaior)
+        } else {
+            if (numeroMenor % numeroMaior !== 0) {
+                console.log(numeroMenor + " não é divisível por " + numeroMaior)
+            } 
+                if (numeroMaior % numeroMenor !== 0) {
+                console.log(numeroMaior + " não é divisível por " + numeroMenor)
+                }
+        }
+        subtrai (numeroMaior, numeroMenor)
+}
+
+function subtrai (numeroMaior, numeroMenor) {
+let diferenca = numeroMaior - numeroMenor 
+console.log("A diferença entre eles é " + diferenca)
+}
+
+*/
 ///////////// FIM EXERCÍCIOS DE LÓGICA DE PROGRAMAÇÃO ////////////////////
 
