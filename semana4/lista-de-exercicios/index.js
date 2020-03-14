@@ -108,14 +108,33 @@ console.log(menor)
 // imprimir 0, 2, 4, 6 e 8).  Um colega seu disse que já começou esta tarefa, mas não conseguiu terminar. 
 // Dê uma olhada no código dele:
 
-//         const quantidadeDeNumerosPares
-//         let i = 0
-//         while(i <= quantidadeDeNumerosPares) {
-//           console.log(i*2)
-//         }
+/*
+const quantidadeDeNumerosPares
+let i = 0
+while(i <= quantidadeDeNumerosPares) {
+  console.log(i*2)
+}
+*/
 
 //     Este código funciona? Por quê? Caso não funcione, corrija a implementação dele.
 
+//Este código não funciona, porque qualquer que seja o valor da const quantidadeDeNumerosPares, não há uma 
+// condição que acresça o valor de i a cada loop. Não há um if/else
+//Segue um código que funcione:
+/*
+const quantidadeDeNumerosPares = 4
+let i = 0
+    while(i < quantidadeDeNumerosPares*2) {
+ if (i % 2 === 0) {
+   console.log(i)
+   i++
+} else {
+ i++
+}
+}
+*/
 
+
+//
 ///////////// FIM EXERCÍCIOS DE LÓGICA DE PROGRAMAÇÃO ////////////////////
 
