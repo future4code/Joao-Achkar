@@ -160,6 +160,7 @@ console.log(classificaTriangulo(5, 5, 5))
 // i. indique qual é o maior,
 // ii. determine se eles são divisíveis um pelo outro (use o operador %) e
 // iii. determine a diferença entre eles (o resultado deve ser um número positivo sempre)
+
 /*
 compara(4, 20)
 function compara (a, b) {
@@ -201,7 +202,46 @@ function subtrai (numeroMaior, numeroMenor) {
 let diferenca = numeroMaior - numeroMenor 
 console.log("A diferença entre eles é " + diferenca)
 }
-
 */
 ///////////// FIM EXERCÍCIOS DE LÓGICA DE PROGRAMAÇÃO ////////////////////
 
+
+///////////////////// INÍCIO EXERCÍCIOS DE FUNÇÕES ///////////////////////
+//1. Escreva uma função que receba um array de números e imprima na tela o segundo maior 
+//e o segundo menor número. Em seguida, invoque essa função
+
+
+// travei nesse =(
+/*
+function imprimeSegMaiorSegMenor(array) {
+    let segMaior = array [0]
+    for(let i = 0; i < array.length; i++){
+        const elemento = array[i]
+    
+        if (elemento > segMaior){
+            segMaior = elemento
+        }
+    }
+}
+
+const elementosArray = imprimeSegMaiorSegMenor([1, 2, 3, 4, 5])
+*/
+
+
+/*
+function imprimeArray(array){
+    for(let elemento of array) {
+        console.log(elemento)
+    }
+    return array.length
+ }
+ 
+ const numeroDeElementos = imprimeArray([1, 2, 3, 4, 5])
+ 
+ console.log(numeroDeElementos)
+*/
+
+
+//2. Escreva uma função não nomeada que faça um alert("Hello Future4");. Em seguida, invoque essa função.
+//travei nesse também =(
+/////////////////////// FIM EXERCÍCIOS DE FUNÇÕES ////////////////////////
