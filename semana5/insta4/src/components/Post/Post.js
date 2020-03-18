@@ -15,44 +15,13 @@ class Post extends React.Component {
     this.state = {
       curtido: false,
       numeroCurtidas: 0,
-      comentando: false,
+      comentando: true,
       numeroComentarios: 0
     }
   }
 
   onClickCurtida = () => {
     console.log('Curtiu!')
-    let iconeCurtida
-    if(this.state.curtido === false) {
-      this.setState({
-        curtido: true,
-        numeroCurtidas: this.state.numeroCurtidas + 1
-      })
-    } else {
-      this.setState({
-        curtido: false,
-        numeroCurtidas: this.state.numeroCurtidas -1
-      })
-    }
-  }
-  onClickCurtidaDois = () => {
-    console.log('Curtiu!')
-    let iconeCurtida
-    if(this.state.curtido === false) {
-      this.setState({
-        curtido: true,
-        numeroCurtidas: this.state.numeroCurtidas + 1
-      })
-    } else {
-      this.setState({
-        curtido: false,
-        numeroCurtidas: this.state.numeroCurtidas -1
-      })
-    }
-  }
-  onClickCurtidaTres = () => {
-    console.log('Curtiu!')
-    let iconeCurtida
     if(this.state.curtido === false) {
       this.setState({
         curtido: true,
@@ -66,7 +35,7 @@ class Post extends React.Component {
     }
   }
 
-  onClickComentarioUm = () => {
+  onClickComentario = () => {
     this.setState({
       comentando: !this.state.comentando
     })
@@ -120,55 +89,6 @@ class Post extends React.Component {
       {componenteComentario}
     </div>
 
-
-    <div className={'post-container'}>
-      <div className={'post-header'}>
-        <img className={'user-photo'} src={this.props.fotoUsuarioDois} alt={'Imagem do usuario'}/>
-        <p>{this.props.nomeUsuarioDois}</p>
-      </div>
-
-      <img className={'post-photo'} src={this.props.fotoPostDois} alt={'Imagem do post'}/>
-
-      <div className={'post-footer'}>
-        <IconeComContador
-          icone={iconeCurtida}
-          onClickIcone={this.onClickCurtidaDois}
-          valorContador={this.state.numeroCurtidas}
-        />
-
-        <IconeComContador
-          icone={iconeComentario}
-          onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
-        />
-      </div>
-      {componenteComentario}
-    </div>
-    
-
-    <div className={'post-container'}>
-      <div className={'post-header'}>
-        <img className={'user-photo'} src={this.props.fotoUsuarioTres} alt={'Imagem do usuario'}/>
-        <p>{this.props.nomeUsuarioTres}</p>
-      </div>
-
-      <img className={'post-photo'} src={this.props.fotoPostTres} alt={'Imagem do post'}/>
-
-      <div className={'post-footer'}>
-        <IconeComContador
-          icone={iconeCurtida}
-          onClickIcone={this.onClickCurtidaTres}
-          valorContador={this.state.numeroCurtidas}
-        />
-
-        <IconeComContador
-          icone={iconeComentario}
-          onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
-        />
-      </div>
-      {componenteComentario}
-    </div>
     
     </div>
   }

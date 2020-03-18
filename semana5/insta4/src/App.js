@@ -10,16 +10,18 @@ class App extends React.Component {
           nomeUsuario={'paulinha'}
           fotoUsuario={'https://picsum.photos/50/50'}
           fotoPost={'https://picsum.photos/200/150'}
-
-          nomeUsuarioDois={'golinho'}
-          fotoUsuarioDois={'https://picsum.photos/55/50'}
-          fotoPostDois={'https://picsum.photos/250/150'}
-
-          nomeUsuarioTres={'darvinho'}
-          fotoUsuarioTres={'https://picsum.photos/65/50'}
-          fotoPostTres={'https://picsum.photos/240/150'}
-
         />
+        <Post
+          nomeUsuario={'golinho'}
+          fotoUsuario={'https://picsum.photos/55/50'}
+          fotoPost={'https://picsum.photos/250/150'}
+        />
+        <Post
+          nomeUsuario={'darvinho'}
+          fotoUsuario={'https://picsum.photos/65/50'}
+          fotoPost={'https://picsum.photos/240/150'}
+          />
+        
       </div>
     );
   }
