@@ -172,36 +172,7 @@ class Post extends React.Component {
     )
 
 
-/*
-{ 
-    return <div>
-    
-    <div className={'post-container'}>
-      <div className={'post-header'}>
-        <img className={'user-photo'} src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
-        <p>{this.props.nomeUsuario}</p>
-      </div>
 
-      <img className={'post-photo'} src={this.props.fotoPost} alt={'Imagem do post'}/>
-
-      <div className={'post-footer'}>
-        <IconeComContador
-          icone={iconeCurtida}
-          onClickIcone={this.onClickCurtida}
-          valorContador={this.state.numeroCurtidas}
-        />
-
-        <IconeComContador
-          icone={iconeComentario}
-          onClickIcone={this.onClickComentario}
-          valorContador={this.state.numeroComentarios}
-        />
-      </div>
-      {componenteComentario}
-    </div> 
-
-    
-    </div>}*/
   }
 }
 
