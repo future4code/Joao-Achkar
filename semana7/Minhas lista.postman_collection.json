@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "268095c6-7017-4fc7-aec9-b471646c61be",
+		"name": "Minhas lista",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getPlaylistSongs",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth",
+						"type": "text",
+						"value": "joaopfa-hamilton"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists/:playlistId/songs",
+					"protocol": "https",
+					"host": [
+						"us-central1-future-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"spotifour",
+						"playlists",
+						":playlistId",
+						"songs"
+					],
+					"variable": [
+						{
+							"key": "playlistId",
+							"value": "5527c7f6-68ea-4044-b7f7-04b80df581a0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
