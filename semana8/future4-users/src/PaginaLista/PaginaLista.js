@@ -69,7 +69,10 @@ class PaginaLista extends React.Component  {
         return auxiliar;
     }
 
+
+
     deleteUser = (id, name) => {
+        if (window.confirm("Deseja mesmo deletar o usuário " + name + "?")) {
         axios
         .delete(`https://us-central1-future-apis.cloudfunctions.net/api/users/${id}`, {
             headers: {
@@ -81,8 +84,11 @@ class PaginaLista extends React.Component  {
         })
         .catch(() => {
             alert("deu erro")
-        })
-    }
+        })   
+         } else {
+             window.alert("Uffa, rs")
+         }
+        } 
 
     render () {
     return (
