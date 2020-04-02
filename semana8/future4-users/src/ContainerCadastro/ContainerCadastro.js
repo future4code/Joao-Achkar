@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-const Container = styled.div `
+const Container = styled.div`
     border: black 1px solid;
     padding: 15px;
     margin: 0 auto;
     width: fit-content;
 `
-const Inputs = styled.input `
+const Inputs = styled.input`
 `
-const SaveButton = styled.button `
+const SaveButton = styled.button`
   margin: 5px; 
   z-index: 1;
   position: relative;
@@ -45,14 +45,14 @@ class ContainerCadastro extends React.Component {
         super(props);
         this.state = {
             nameValue: "",
-            emailValue:""
+            emailValue: ""
         };
     }
     onChangeName = (event) => {
-        this.setState({ nameValue: event.target.value})
+        this.setState({ nameValue: event.target.value })
     }
     onChangeEmail = (event) => {
-        this.setState({ emailValue: event.target.value})
+        this.setState({ emailValue: event.target.value })
     }
     onClickSave = () => {
         console.log(this.state.nameValue)
@@ -68,33 +68,33 @@ class ContainerCadastro extends React.Component {
             }
         }).then(() => {
             alert("Usuário criado com sucesso");
-    })
-        .catch(() => {
-            alert("Deu ruim com requisição");
         })
+            .catch(() => {
+                alert("Deu ruim com requisição");
+            })
     }
 
-    render () {
-    return (
-    <Container>
-    <label for="name"><p>Nome</p></label>
-    <Inputs id="name"
-    value={this.state.nameValue}
-    onChange={this.onChangeName}
-    ></Inputs>
+    render() {
+        return (
+            <Container>
+                <label for="name"><p>Nome</p></label>
+                <Inputs id="name"
+                    value={this.state.nameValue}
+                    onChange={this.onChangeName}
+                ></Inputs>
 
-    <label for="password"><p>Senha</p></label>
-    <Inputs id="password"
-        value={this.state.emailValue}
-        onChange={this.onChangeEmail}
-    ></Inputs>
-        <br/>
-    <SaveButton onClick={this.onClickSave}>Salvar</SaveButton>
+                <label for="password"><p>Senha</p></label>
+                <Inputs id="password"
+                    value={this.state.emailValue}
+                    onChange={this.onChangeEmail}
+                ></Inputs>
+                <br />
+                <SaveButton onClick={this.onClickSave}>Salvar</SaveButton>
 
 
 
-    </Container>
-    )
+            </Container>
+        )
     }
 }
 
