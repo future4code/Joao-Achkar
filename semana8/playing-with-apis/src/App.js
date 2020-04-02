@@ -10,7 +10,33 @@ const Title = styled.h1 `
 `
 const Strong = styled.strong `
   font-family: 'Shadows Into Light', cursive;
-  font-size: 30px;
+  font-size: 35px;
+`
+const StrongTwo = styled.strong `
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 28px;
+`
+const ActivityInfo = styled.p `
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid gray
+`
+
+const Button = styled.button `
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 28px;
+`
+
+const MainContainer = styled.div `
+  display: flex;
+  justify-content: center;
+`
+
+const SecondContainer = styled.div `
+  width: 70%;
+  text-align: start;
+  
 `
 
 class App extends React.Component {
@@ -45,31 +71,31 @@ class App extends React.Component {
       Aperte o botão e descubra!
        </Title>
 
-     <button onClick={this.sortActivity}>botao</button>
+     <Button onClick={this.sortActivity}>Descubra!</Button>
 
-
+<MainContainer>
      {this.state.activityInfo && (
-       <div>
-         <p>
+       <SecondContainer>
+         <ActivityInfo>
            <Strong>Atividade: </Strong> 
-           {this.state.activityInfo.activity}
-         </p>
-         <p>
+           <StrongTwo>{this.state.activityInfo.activity}</StrongTwo> 
+         </ActivityInfo>
+         <ActivityInfo>
            <Strong>Tipo:  </Strong> 
-           {this.state.activityInfo.type}
-         </p>
-         <p>
+           <StrongTwo>{this.state.activityInfo.type}</StrongTwo>
+         </ActivityInfo>
+         <ActivityInfo>
            <Strong>Número de pessoas necessárias: </Strong> 
-           {this.state.activityInfo.participants}
-         </p>
-         <p>
-           <Strong>Praticável em tempos de quarentena?! <br/> 
-             {simNao}  </Strong> 
-              
+           <StrongTwo>{this.state.activityInfo.participants}</StrongTwo>
+         </ActivityInfo>
+         <ActivityInfo>
+           <Strong>Praticável em tempos de quarentena?! </Strong> 
+           <StrongTwo>{simNao}</StrongTwo>
            
-         </p>
-       </div>
+         </ActivityInfo>
+       </SecondContainer>
      )}
+</MainContainer>
 
     </Container>
   );
