@@ -6,14 +6,14 @@ export class SecaoComentario extends Component {
 		super(props)
 
 		this.state = {
-			textoUsuario: " ",
+			textoUsuario: " "
 		}
 	}
 
-	onChangeComentario(event) {
-		const textoInput = event.target.value
-        this.setState({
-            textoUsuario: textoInput
+	onChangeComentario = (event) => {
+		console.log(event.target.value)
+    this.setState({
+            textoUsuario: event.target.value
         })
 	}
 
