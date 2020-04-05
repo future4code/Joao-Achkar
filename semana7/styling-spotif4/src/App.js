@@ -1,123 +1,102 @@
 import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
+import NavBar from './Components/NavBar';
+import GetPlaylist from './Components/GetPlayList';
+import CreatePlaylist from './Components/CreatePlaylist';
 
-const Body = styled.div `
+const Body = styled.div`
   background-color: #323B3F;
   color: white;
   height: 100vh;
   width: 100vw;
 `
-const Nav = styled.nav `
-  background-color: #FE7E02;
-  width: 100%;
-  height: 50px;
-  position: fixed;
-  padding-left: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-const Header = styled.header `
+const Header = styled.header`
   width: 100%;
   height: 80px;
 `
-const LogoSpoti = styled.p `
-  color: #323B3F;
-  font-weight: 900;
-  font-size: 20px;
-  padding-bottom: 5px;
-`
-const LogoF4 = styled.p `
-  color: #6611c3;
-  font-weight: 900;
-  font-size: 20px;
-  padding-bottom: 5px;
-`
-const NavList = styled.ul `
-  list-style-type: none;
-`
-const NavItems = styled.li `
-  display: inline; 
-  padding: 2px 3vw 2px 3vw;
-  border-right: 1px solid white;
-  text-align: center;
-`
-const Main = styled.main `
+const Main = styled.main`
   padding-left: 30px;
 `
-const InputBusca = styled.input `
-  margin-left: 5px;
-  border-style: none;
-  border-radius: 4px;
-  padding: 3px;
-  :focus {
-    outline: none;
-  }
-`
-const CriaPlaylist = styled.a `
-  text-decoration: none;
-  color: white;
-  :hover {
-    color: #6611c3;
-    font-weight: 500;
-    cursor: pointer;
-  }
-`
+// const PlaylistName = styled.input`
+//   margin-left: 5px;
+//   border-style: none;
+//   border-radius: 4px;
+//   padding: 10px;
+//   :focus {
+//     outline: none;
+//   }
+// `
+// const ButtonPlaylist = styled.button`
+//   margin-right: 5px;
+//   border-style: none;
+//   border-radius: 4px;
+//   padding: 10px;
+//   outline: none;
+//   cursor: pointer;
+//   :active {
+//     outline: none;
+//     background-color: #FE7E02;
+//     color: white;
+//   }
+// `
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      playlist: [
-        {
-          id: "b8b008f0-1c43-4106-9edf-6a86b4b52c50",
-          name: "Álcool Gel"
-        },
-        {
-          id: "5527c7f6-68ea-4044-b7f7-04b80df581a0",
-          name: "Rapidinha"
-        }
-      ]
+      playlist: [],
+      inputValue: '',
+      componentRender: '1'
     }
   }
 
- componentDidMount() {
-   axios.get ('https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists')
-   .then(res => {
-     console.log(res);
-     this.setState({playlist: res.data});
-   })
- }
- createNewPlaylist = () => {
-   const request = axios.get ('https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists')
-    request.then((response) => {
-      this.setState ({ playlist: response.data})
+
+  onChangePlaylistName = (event) => {
+  this.setState({inputValue: event.target.value})
+  }
+
+  createPlaylist = () => {
+    const body = {
+      name: this.state.inputValue
+    }
+    axios
+    .post(
+      'https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists', 
+      body, {
+      headers: {
+        auth: 'joaopfa-hamilton'
+      }
+
+    }).then((response) => {
+      console.log(response)
+    }).catch(() => {
+      console.log('error')
     })
   }
 
-  render () {
+  render() {
+// let componentRender;
+// switch (this.state.componentRender) {
+//   case "1":
+//     componentRender = 
+// }
 
-
-  return (
-    <Body>
-      <Nav>
-        <LogoSpoti>Spoti</LogoSpoti>
-        <LogoF4>F4</LogoF4>
-        <NavList>
-          <NavItems><CriaPlaylist>Criar nova playlist</CriaPlaylist></NavItems>
-          <NavItems>Suas playlists</NavItems>
-          <NavItems>Suas músicas</NavItems>
-          <NavItems>Busca playlist: <InputBusca/></NavItems>
-        </NavList>
-      </Nav>
-      <Header></Header>
-     <Main>
-       Oi
-       <button onClick={this.state.componentDidMount}>Cria playlist</button>
-     </Main>
-    </Body>
-  );
+    return (
+      <Body>
+        <NavBar/>
+        <Header></Header>
+        <Main>
+        <CreatePlaylist/>
+        {/* <ButtonPlaylist onClick={this.createPlaylist}>Criar nova Playlist</ButtonPlaylist>
+        <PlaylistName 
+        onChange={this.onChangePlaylistName}
+        value={this.state.inputValue} 
+        placeholder={'Nome da sua playlist'}/> */}
+        <GetPlaylist/>
+        </Main>
+      </Body>
+    );
   }
 }
 
