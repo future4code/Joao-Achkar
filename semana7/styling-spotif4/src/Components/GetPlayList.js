@@ -57,6 +57,7 @@ class GetPlaylist extends React.Component {
     }
 
     deletePlaylist = (id, name) => {
+      if (window.confirm ("Deseja deletar a playlist " + name + "?")) {
       axios
       .delete(`https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists/${id}`,
       {
@@ -70,6 +71,9 @@ class GetPlaylist extends React.Component {
       .catch(() => {
         alert("erro")
       })
+      } else {
+        window.alert("Playlist mantida")
+      }
     }
 
     render() {
