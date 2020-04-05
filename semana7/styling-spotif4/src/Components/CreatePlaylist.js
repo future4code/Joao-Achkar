@@ -58,6 +58,7 @@ class CreatePlaylist extends React.Component {
         console.log('error')
       })
       this.setState({inputValue: ''})
+      alert("Playlist " + this.state.inputValue + " criada com sucesso")
     }
   
     render() {
