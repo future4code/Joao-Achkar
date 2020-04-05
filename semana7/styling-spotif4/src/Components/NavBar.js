@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 import GetPlaylist from './GetPlayList';
+import CreatePlaylist from './CreatePlaylist';
 
 const Nav = styled.nav`
   background-color: #FE7E02;
@@ -43,7 +44,7 @@ const InputBusca = styled.input`
     outline: none;
   }
 `
-const CriaPlaylist = styled.a`
+const RenderClick = styled.a`
   text-decoration: none;
   color: white;
   :hover {
@@ -58,20 +59,46 @@ const SubNav = styled.ul `
 `
 
 class NavBar extends React.Component {
-    constructor() {
-        super()
-        this.state={
-            showFormToPlaylist: true,
-        }
-    }
 
-    dropDown = () => {
-        this.render (
-                <SubNav>
-                    <li>Input </li>
-                </SubNav>
-        )
-    }
+
+    
+
+
+    // constructor(props) {
+    //     super(props)
+    //     this.state={
+    //         selctedPage: 'CreatePlaylist',
+    //         componentRender: true
+    //     }
+    // }
+
+    // onClickButton = () => {
+    //   let bodyPage;
+
+    //   switch (this.state.selctedPage) {
+    //     case 'CreatePlaylist':
+    //       bodyPage = 'CreatePlaylist'
+    //       break;
+    //     case 'GetPlayList':
+    //       bodyPage = 'GetPlayList'
+    //       break;
+    //     default:
+    //       bodyPage = "CreatePlaylist"
+    //   }
+    //   this.setState({ selctedPage: bodyPage})
+    // }
+
+    // getPageToRender = () => {
+    //   switch (this.state.selectedPage) {
+    //     case "CreatePlaylist":
+    //       return <CreatePlaylist/>;
+    //     case "GetPlayList":
+    //       return <GetPlaylist/>;
+    //     default:
+    //       return <CreatePlaylist/>
+    //   }
+    // }
+
 
     render() {
     return (
@@ -79,10 +106,9 @@ class NavBar extends React.Component {
         <LogoSpoti>Spoti</LogoSpoti>
         <LogoF4>F4</LogoF4>
         <NavList>
-          <NavItems><CriaPlaylist onClick={this.dropDown}>Criar nova playlist</CriaPlaylist></NavItems>
-
-          <NavItems onClick={GetPlaylist}>Suas playlists</NavItems>
-          <NavItems>Suas músicas</NavItems>
+          <NavItems><RenderClick onClick={this.props.triggerParentUpdate}>Criar nova playlist</RenderClick></NavItems>
+           
+          <NavItems><RenderClick onClick={this.props.triggerParentReUpdate}>Suas playlists</RenderClick></NavItems>
           <NavItems>Busca playlist: <InputBusca /></NavItems>
         </NavList>
       </Nav>

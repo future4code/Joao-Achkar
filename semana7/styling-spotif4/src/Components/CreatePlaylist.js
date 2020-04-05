@@ -57,6 +57,7 @@ class CreatePlaylist extends React.Component {
       }).catch(() => {
         console.log('error')
       })
+      this.setState({inputValue: ''})
     }
   
     render() {

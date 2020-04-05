@@ -17,6 +17,8 @@ const Header = styled.header`
 `
 const Main = styled.main`
   padding-left: 30px;
+  display: flex;
+  justify-content: center;
 `
 // const PlaylistName = styled.input`
 //   margin-left: 5px;
@@ -47,10 +49,18 @@ class App extends React.Component {
     this.state = {
       playlist: [],
       inputValue: '',
-      componentRender: '1'
+      componentRender: true
     }
+    this.updateComponentRender = this.updateComponentRender.bind(this);
+    this.reUpdateComponentRender = this.reUpdateComponentRender.bind(this);
   }
 
+  updateComponentRender() {
+    this.setState({componentRender: true})
+  }
+  reUpdateComponentRender() {
+    this.setState({componentRender: false})
+  }
 
   onChangePlaylistName = (event) => {
   this.setState({inputValue: event.target.value})
@@ -84,16 +94,20 @@ class App extends React.Component {
 
     return (
       <Body>
-        <NavBar/>
+        <NavBar triggerParentUpdate={this.updateComponentRender}
+        triggerParentReUpdate={this.reUpdateComponentRender}
+        />
         <Header></Header>
         <Main>
-        <CreatePlaylist/>
+        {this.state.componentRender ?  
+        <CreatePlaylist/> : 
+        <GetPlaylist/>}
         {/* <ButtonPlaylist onClick={this.createPlaylist}>Criar nova Playlist</ButtonPlaylist>
         <PlaylistName 
         onChange={this.onChangePlaylistName}
         value={this.state.inputValue} 
         placeholder={'Nome da sua playlist'}/> */}
-        <GetPlaylist/>
+        
         </Main>
       </Body>
     );
