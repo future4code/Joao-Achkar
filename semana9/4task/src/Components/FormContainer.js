@@ -25,19 +25,7 @@ const InputToDo = styled.input `
     }
     
 `
-const LabelToDo = styled.div `
-    display: flex;
-    align-items: center;
-    margin: 0;
-    width: 100%;
-    padding-left: 70px;
-    font-size: 25px;
-    height: 65px;
-    border: none;
-    border-bottom: 1px solid #00000021;
-    box-sizing: border-box;
-    
-`
+
 
 class FormContainer extends React.Component {
   constructor(props){

@@ -11,8 +11,34 @@ const ButtonActions = styled.div `
     font-size: 25px;
     height: 65px;
     border: none;
-
+    background-color: white;
+    box-sizing: border-box;
 `
+const Link = styled.p`
+font-size: 16px;
+:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+`
+
+const Buttons = styled.button`
+    
+    border: none;
+    padding: 3px 7px;
+    background-color: white;
+cursor: pointer;
+:hover{
+    
+    border: #f7d794 0.2px solid;
+    
+}
+:focus{
+    border: orange 0.2px solid;
+    outline: none; 
+}
+`
+
 
 class Footer extends React.Component {
     constructor(props){
@@ -23,10 +49,10 @@ class Footer extends React.Component {
     render() {  
       return (
         <ButtonActions>
-        <button>Marcar todas como completas</button>
-        <button>Mostrar Todas</button>
-        <button>Mostrar Pendentes</button>
-        <button>Mostrar completas</button>
+        <Link>Marcar todas como completas</Link>
+        <Buttons>Mostrar Todas</Buttons>
+        <Buttons>Mostrar Pendentes</Buttons>
+        <Buttons>Mostrar completas</Buttons>
 
     </ButtonActions>
         );
