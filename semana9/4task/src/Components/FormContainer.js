@@ -23,15 +23,38 @@ const InputToDo = styled.input `
     ::placeholder{
         font-style: italic;
     }
-    
 `
-
+const TarefaAdicionada = styled.div `
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    width: 100%;
+    padding-left: 50px;
+    font-size: 25px;
+    height: 65px;
+    border: none;
+    border-bottom: 1px solid #00000021;
+    background-color: white;
+    box-sizing: border-box;
+`
 
 class FormContainer extends React.Component {
   constructor(props){
     super(props);
-    this.state = {}
+    this.state = {
+      inputValue: '',
+      tarefa: ''
+    }
   }
+
+  handleOnChange = (event) => {
+    this.setState ({inputValue: event.target.value})
+  }
+  renderizarTarefa = (event) => {
+    this.setState ({tarefa: event.target.value})
+  }
+
   render() {  
     return (
       <FormCont>
@@ -40,9 +63,15 @@ class FormContainer extends React.Component {
             type="text" 
             id="whattodo"
             placeholder="O que fazer?"
+            value = {this.state.inputValue}
+            onChange ={this.handleOnChange}
+            onKeyPress = {this.renderizarTarefa}
             />
 
         </form>
+        <TarefaAdicionada>
+    <p> {this.state.tarefa}</p>
+        </TarefaAdicionada>
         <Footer/>
       </FormCont>
       

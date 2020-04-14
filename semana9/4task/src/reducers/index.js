@@ -1,7 +1,10 @@
-import { clickReducer } from './clickReducer';
-import { OtherReducer } from './otherReducer';
+import  todos  from './todos';
 import { combineReducers } from 'redux';
-export const Reducers = combineReducers({
-  clickState: clickReducer,
-  otherState: otherReducer
+
+const rootReducer = combineReducers({
+  id: 'id',
+  texto: '',
+  completa: ''
 });
+
+export default rootReducer;

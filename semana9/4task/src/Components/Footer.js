@@ -48,7 +48,7 @@ class Footer extends React.Component {
 
     render() {  
       return (
-        <ButtonActions>
+    <ButtonActions>
         <Link>Marcar todas como completas</Link>
         <Buttons>Mostrar Todas</Buttons>
         <Buttons>Mostrar Pendentes</Buttons>
