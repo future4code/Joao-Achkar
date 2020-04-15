@@ -4,14 +4,29 @@ import { connect } from 'react-redux';
 import { addTarefa } from '../actions/todos';
 
 const FormCont = styled.div `
-  display: block;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   height: fit-content;
   width: 700px;
-  box-shadow: 2px 4px 4px 0 rgba(0,0,0,.2), 0 25px 50px 0 rgba(0,0,0,.1);
+`
+const Button = styled.button `
+    border: none;
+    margin-top: 0;
+    border-bottom: 1px solid #00000021;
+    height: 56px;
+    width: 10%;
+    background-color: white;
+    :focus{
+        outline: none;
+    }
+    :hover{
+      cursor: pointer;
+      background-color: #00000021;
+    }
 `
 const InputToDo = styled.input `
-    width: 100%;
+    width: 90%;
     padding-left: 70px;
     font-size: 25px;
     height: 65px;
@@ -42,6 +57,7 @@ class FormContainer extends React.Component {
    
    onClickAddTarefa = () => {
        this.props.addTarefa(this.state.inputText)
+       this.setState ({inputText: ''})
    }
 
 
@@ -56,8 +72,9 @@ class FormContainer extends React.Component {
             value = {this.state.inputText}
             onChange={this.handleOnChange}
             />
-            <button type="button" onClick={this.onClickAddTarefa}>Vai</button>
-
+         
+            <Button type="button" onClick={this.onClickAddTarefa}>Vai</Button>
+          
         </form>
       </FormCont>
       
@@ -73,8 +90,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addTarefa: (texto) => {
       const action = addTarefa(texto)
-      console.log(action)
-      dispatch(addTarefa(texto))
+      // console.log(action)
+      dispatch(action)
     }
   };
 };

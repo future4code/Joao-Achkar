@@ -2,7 +2,7 @@ export const  addTarefa = texto => {
     return {
         type: 'ADD_TAREFA',
         payload: {
-            texto: 'blabla',
+            texto: 'texto teste',
         }
     }
 }

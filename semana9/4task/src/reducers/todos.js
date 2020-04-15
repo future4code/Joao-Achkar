@@ -12,20 +12,26 @@ const initialState = {
 }
 
 const todos = (state = initialState, action) => {
+    console.log('ACTION', action)
+    console.log('STATE', state)
+
     switch (action.type) {
         case 'ADD_TAREFA':
+            const novaTarefa = {
+            id: Date.now(),
+            texto: action.payload.texto
+            };
             return {
-                ...state, 
-                id: action.payload.id, 
-                texto: action.payload.completa, 
-                completa: action.payload.completa
+                todosList: [novaTarefa, ...state.todosList]
             }
         case 'MARCAR_TAREFA_COMO_COMPLETA':
+
             return {
-                ...state, 
-                id: action.payload.id, 
-                completa: action.payload.completa
-            }
+                             // ...state, 
+                // id: action.payload.id, 
+                // completa: action.payload.completa
+                }
+
         case 'DELETA_TAREFA':
             return {
                 ...state, 
