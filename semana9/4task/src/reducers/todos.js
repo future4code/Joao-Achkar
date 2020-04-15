@@ -1,7 +1,14 @@
 const initialState = {
-    id: 'id',
-    texto: '',
-    completa: ''
+    todosList: [
+    {
+        id: 1,
+        texto: 'vaarrer lavar'
+    },
+    {
+        id: 2,
+        texto: 'Tarefa 2 do redux'
+    }
+  ]
 }
 
 const todos = (state = initialState, action) => {
@@ -25,6 +32,8 @@ const todos = (state = initialState, action) => {
                 id: action.payload.id, 
                 completa: action.payload.completa
             }   
+        default: 
+            return state;
 
     }
 }

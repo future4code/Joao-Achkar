@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Footer from './Footer';
+import { connect } from 'react-redux';
+import { addTarefa } from '../actions/todos';
 
 const FormCont = styled.div `
   display: block;
@@ -24,60 +25,62 @@ const InputToDo = styled.input `
         font-style: italic;
     }
 `
-const TarefaAdicionada = styled.div `
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    width: 100%;
-    padding-left: 50px;
-    font-size: 25px;
-    height: 65px;
-    border: none;
-    border-bottom: 1px solid #00000021;
-    background-color: white;
-    box-sizing: border-box;
-`
+
 
 class FormContainer extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      inputValue: '',
-      tarefa: ''
-    }
-  }
+   constructor(props){
+     super(props);
+     this.state = {
+       inputText: '',
+       tarefa: ''
+     }
+   }
 
-  handleOnChange = (event) => {
-    this.setState ({inputValue: event.target.value})
-  }
-  renderizarTarefa = (event) => {
-    this.setState ({tarefa: event.target.value})
-  }
+   handleOnChange = (event) => {
+     this.setState ({inputText: event.target.value})
+   }
+   
+   onClickAddTarefa = () => {
+       this.props.addTarefa(this.state.inputText)
+   }
+
 
   render() {  
+ 
     return (
       <FormCont>
         <form>
             <InputToDo 
-            type="text" 
-            id="whattodo"
+            type="text"
             placeholder="O que fazer?"
-            value = {this.state.inputValue}
-            onChange ={this.handleOnChange}
-            onKeyPress = {this.renderizarTarefa}
+            value = {this.state.inputText}
+            onChange={this.handleOnChange}
             />
+            <button type="button" onClick={this.onClickAddTarefa}>Vai</button>
 
         </form>
-        <TarefaAdicionada>
-    <p> {this.state.tarefa}</p>
-        </TarefaAdicionada>
-        <Footer/>
       </FormCont>
       
     
-  );
+    );
   }
 }
+const mapStateToProps = (state) => {
+  return {};
+};
 
-export default FormContainer;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addTarefa: (texto) => {
+      const action = addTarefa(texto)
+      console.log(action)
+      dispatch(addTarefa(texto))
+    }
+  };
+};
+
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+) (FormContainer)

@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Title from './Components/Title';
 import FormContainer from './Components/FormContainer';
+import Footer from './Components/Footer';
+import TaskList from './Components/TaskList';
 
 const MainCont = styled.div `
   display: flex;
@@ -10,6 +12,14 @@ const MainCont = styled.div `
   height: 100vh;
   width: 100vw;
   background-color: #F5F5F5;
+`
+const SubCont = styled.div `
+  display: block;
+  justify-content: center;
+  height: fit-content;
+  width: 700px;
+  box-shadow: 2px 4px 4px 0 rgba(0,0,0,.2), 0 25px 50px 0 rgba(0,0,0,.1);
+
 `
 
 class App extends React.Component {
@@ -21,7 +31,11 @@ class App extends React.Component {
     return (
     <MainCont>
       <Title/>
+      <SubCont>
       <FormContainer/>
+      <TaskList/>
+      <Footer/>
+      </SubCont>
     </MainCont>
   );
   }

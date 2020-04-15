@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+//import { connect } from 'react-redux';
 
 const ButtonActions = styled.div `
     display: flex;
@@ -41,11 +42,6 @@ cursor: pointer;
 
 
 class Footer extends React.Component {
-    constructor(props){
-      super(props);
-      this.state = {}
-    }
-
     render() {  
       return (
     <ButtonActions>
@@ -58,5 +54,5 @@ class Footer extends React.Component {
         );
     }
   }
-  
-  export default Footer;
+
+  export default Footer
