@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { marcarTarefaComoCompleta } from '../actions/todos';
+
 
 
 const TarefaAdicionada = styled.div `
@@ -23,7 +25,10 @@ class TaskList extends React.Component {
     render() {  
       return (<div>
         {this.props.taskList.map(task => (
-            <TarefaAdicionada key={task.id}>{task.texto}</TarefaAdicionada>
+            <TarefaAdicionada key={task.id} 
+            onClick={() => this.props.marcarTarefaComoCompleta(task.id)}>
+              {task.texto} - Completa: {String(task.completa)}
+              </TarefaAdicionada>
             ))}
             </div>
         );
@@ -35,8 +40,10 @@ class TaskList extends React.Component {
         taskList: state.todos.todosList
     }
   }
-  const mapDispatchToProps = () => {
-    return {}
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      marcarTarefaComoCompleta: id => dispatch (marcarTarefaComoCompleta(id))
+    }
   }
   
   

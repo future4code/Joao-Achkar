@@ -2,20 +2,19 @@ export const  addTarefa = texto => {
     return {
         type: 'ADD_TAREFA',
         payload: {
-            texto: 'texto teste',
+            texto
         }
     }
 }
 
-// export function  marcarTarefaComoCompleta (id, completa) {
-//     return {
-//         type: 'MARCAR_TAREFA_COMO_COMPLETA',
-//         payload: {
-//             id: id,
-//             completa: false,
-//         }
-//     }
-// }
+ export const  marcarTarefaComoCompleta = id => {
+     return {
+         type: 'MARCAR_TAREFA_COMO_COMPLETA',
+         payload: {
+             id
+         }
+     }
+ }
 
 
 // export function  deletarTarefa (id, completa) {

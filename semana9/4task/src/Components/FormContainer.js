@@ -60,12 +60,11 @@ class FormContainer extends React.Component {
        this.setState ({inputText: ''})
    }
 
-
   render() {  
  
     return (
       <FormCont>
-        <form>
+        <form> {/* DESCOBRIR COMO USAR O ENTER SEM ATUALZIAR A PÁGINA */}
             <InputToDo 
             type="text"
             placeholder="O que fazer?"
@@ -88,11 +87,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addTarefa: (texto) => {
-      const action = addTarefa(texto)
-      // console.log(action)
-      dispatch(action)
-    }
+    addTarefa: (texto) => dispatch (addTarefa(texto))
+   
   };
 };
 
