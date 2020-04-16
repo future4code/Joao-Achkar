@@ -50,31 +50,54 @@ class GetPlaylist extends React.Component {
     renderPlaylist = () => {
       const aux = this.state.playlist.map((lista) => {
         return (
-          <Playlists key = {lista.id}>{lista.name} <DelIcon onClick={() => this.deletePlaylist(lista.id, lista.name)} src={require("./imgs/bin.png")} alt="Deletar playlist"/></Playlists>
+          <Playlists key = {lista.id}>{lista.name} <DelIcon onClick={() => this.deletePlaylist(lista.id, lista.name)}  src={require("./imgs/bin.png")} alt="Deletar playlist"/></Playlists>
         )
       })
       return aux;
     }
 
     deletePlaylist = (id, name) => {
-      if (window.confirm ("Deseja deletar a playlist " + name + "?")) {
-      axios
-      .delete(`https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists/${id}`,
-      {
-        headers: {
-          auth: 'joaopfa-hamilton'
+      //função para confirmar se quieres deletar
+       if (window.confirm ("Deseja deletar a playlist " + name + "?")) {
+      //função para confirmar se quieres deletar
+
+//função pra remover na hora
+      let listaParaDeletar
+      for(const lista of this.state.playlist) {
+        if (lista.id === id) {
+          listaParaDeletar = lista
         }
-      })
-      .then(() => {
-        alert("Playlist " + name + " deletada")
-      })
-      .catch(() => {
-        alert("erro")
-      })
-      } else {
-        window.alert("Playlist mantida")
       }
-    }
+      const playlistCopia = [...this.state.playlist]
+      const indiceParaDeletar = playlistCopia.indexOf(listaParaDeletar)
+      playlistCopia.splice(indiceParaDeletar, 1)
+      this.setState({
+        playlist: playlistCopia
+      })
+//função pra remover na hora
+
+//função pra remover do banco de dados/api
+       axios
+       .delete(`https://us-central1-future-apis.cloudfunctions.net/spotifour/playlists/${id}`,
+       {
+         headers: {
+           auth: 'joaopfa-hamilton'
+         }
+       })
+       .then(() => {
+         alert("Playlist " + name + " deletada")
+       })
+       .catch(() => {
+         alert("erro")
+       })
+       } else {
+         window.alert("Playlist mantida")
+       }
+//função pra remover do banco de dados/api
+     }
+
+
+
 
     render() {
         
