@@ -1,5 +1,6 @@
 const initialState = {
-  profileToSwipe: null
+  profileToSwipe: null,
+  matchesAvailable: [],
 }
 
 const profiles = (state = initialState, action) => {
@@ -11,6 +12,14 @@ const profiles = (state = initialState, action) => {
         profileToSwipe: newProfileToSwipe
       }
     }
+
+    case 'SET_MATCHES': {
+      const matchedProfiles = action.payload.matches
+      return {
+        ...state, matchesAvailable: matchedProfiles
+      }
+    }
+
   }
   return state
 }
