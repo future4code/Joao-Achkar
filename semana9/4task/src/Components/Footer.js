@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-//import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import { marcarTodasComoCompletas } from '../actions/todos'
 
 const ButtonActions = styled.div `
     display: flex;
@@ -17,35 +18,38 @@ const ButtonActions = styled.div `
 `
 const Link = styled.p`
 font-size: 16px;
+cursor: pointer;
 :hover{
     text-decoration: underline;
-    cursor: pointer;
 }
 `
 
 const Buttons = styled.button`
-    
-    border: none;
-    padding: 3px 7px;
+    border-radius: 4px;
+    border: solid 0.5px transparent;
+    padding: 6px 8px;
     background-color: white;
 cursor: pointer;
 :hover{
-    
-    border: #f7d794 0.2px solid;
+    border: orange 0.5px solid;
+    /* border: #f7d794 0.2px solid; */
     
 }
 :focus{
-    border: orange 0.2px solid;
+    
     outline: none; 
 }
 `
 
 
 class Footer extends React.Component {
+
+
+
     render() {  
       return (
     <ButtonActions>
-        <Link>Marcar todas como completas</Link>
+        <Link onClick={() => this.props.marcarTodasComoCompletas()}>Marcar todas como completas</Link>
         <Buttons>Mostrar Todas</Buttons>
         <Buttons>Mostrar Pendentes</Buttons>
         <Buttons>Mostrar completas</Buttons>
@@ -55,4 +59,17 @@ class Footer extends React.Component {
     }
   }
 
-  export default Footer
+  const mapStateToProps = (state) => {
+    return {
+        
+    }
+  }
+  const mapDispatchToProps = (dispatch) => {
+    return {
+        marcarTodasComoCompletas: completa => dispatch (marcarTodasComoCompletas(completa))
+    }
+  }
+
+  export default connect(
+    mapStateToProps, 
+    mapDispatchToProps)(Footer);

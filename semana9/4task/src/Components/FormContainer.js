@@ -14,9 +14,11 @@ const Button = styled.button `
     border: none;
     margin-top: 0;
     border-bottom: 1px solid #00000021;
-    height: 56px;
+    height: 65px;
+    font-size: 25px;
     width: 10%;
     background-color: white;
+    box-sizing: border-box;
     :focus{
         outline: none;
     }
@@ -71,9 +73,7 @@ class FormContainer extends React.Component {
             value = {this.state.inputText}
             onChange={this.handleOnChange}
             />
-         
-            <Button type="button" onClick={this.onClickAddTarefa}>Vai</Button>
-          
+            <Button type="button" onClick={this.onClickAddTarefa}>Add</Button>        
         </form>
       </FormCont>
       
