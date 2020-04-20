@@ -16,17 +16,13 @@ export const  addTarefa = texto => {
      }
  }
 
- export const  marcarTodasComoCompletas = completa => {
+ export const  marcarTodasComoCompletas = () => {
      return {
          type: 'MARCAR_TODAS_COMO_COMPLETAS',
-         payload: {
-             completa
-         }
+
        //n tem valor de payload pq como são todas n precisa identificar elas
      }
  }
-
-
 
  export function  deletarTarefa (id) {
      return {
@@ -37,18 +33,17 @@ export const  addTarefa = texto => {
      }
  }
 
+ export function  limparCompletas () {
+     return {
+         type: 'LIMPAR_COMPLETAS',
+     }
+ }
 
-// export function  limparCompletas () {
-//     return {
-//         type: 'LIMPAR_COMPLETAS',
-//     }
-// }
-
-// export function  filtrar () {
-//     return {
-//         type: 'FILTRAR',
-//         payload: {
-//             filter
-//         }
-//     }
-// }
+ export function  filtrar (filter) {
+     return {
+         type: 'FILTRAR',
+         payload: {
+             filter
+         }
+     }
+ }

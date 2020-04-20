@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { marcarTodasComoCompletas } from '../actions/todos'
+import { marcarTodasComoCompletas, limparCompletas, filtrar } from '../actions/todos'
 
 const ButtonActions = styled.div `
     display: flex;
@@ -43,33 +43,26 @@ cursor: pointer;
 
 
 class Footer extends React.Component {
-
-
-
     render() {  
       return (
     <ButtonActions>
-        <Link onClick={() => this.props.marcarTodasComoCompletas()}>Marcar todas como completas</Link>
-        <Buttons>Mostrar Todas</Buttons>
-        <Buttons>Mostrar Pendentes</Buttons>
-        <Buttons>Mostrar completas</Buttons>
+        <Link onClick={this.props.marcarTodasComoCompletas}>Marcar todas como completas</Link>
+        <Buttons onClick={() => this.props.filtrar('todas')}>Mostrar Todas</Buttons>
+        <Buttons onClick={() => this.props.filtrar('pendentes')}>Mostrar Pendentes</Buttons>
+        <Buttons onClick={() => this.props.filtrar('completas')}>Mostrar completas</Buttons>
+        <Buttons onClick={this.props.limparCompletas}>Remover completas</Buttons>
 
     </ButtonActions>
         );
     }
   }
 
-  const mapStateToProps = (state) => {
-    return {
-        
-    }
-  }
   const mapDispatchToProps = (dispatch) => {
     return {
-        marcarTodasComoCompletas: completa => dispatch (marcarTodasComoCompletas(completa))
+        marcarTodasComoCompletas: () => dispatch (marcarTodasComoCompletas()),
+        limparCompletas: () => dispatch (limparCompletas()),
+        filtrar: (filtro) => dispatch(filtrar(filtro))
     }
   }
 
-  export default connect(
-    mapStateToProps, 
-    mapDispatchToProps)(Footer);
+  export default connect(null, mapDispatchToProps)(Footer);

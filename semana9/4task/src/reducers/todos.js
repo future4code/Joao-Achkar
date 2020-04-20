@@ -10,23 +10,26 @@ const initialState = {
             texto: 'Tarefa 2 do redux',
             completa: true,
         }
-    ]
+    ],
+    filter: 'todas'
 }
 
 const todos = (state = initialState, action) => {
     console.log('ACTION', action)
     console.log('STATE', state)
     switch (action.type) {
-        case 'ADD_TAREFA':
+        case 'ADD_TAREFA':{                     
             const novaTarefa = {
                 id: Date.now(),
                 texto: action.payload.texto,
                 completa: false
             };
-            return {
+            if (action.payload.texto !== '')  { 
+            return {...state,
                 todosList: [novaTarefa, ...state.todosList]
-            }
-
+            }          
+        }
+    }
         case 'MARCAR_TAREFA_COMO_COMPLETA':
             {
                 const newTodosList = state.todosList.map(todo => {
@@ -38,7 +41,7 @@ const todos = (state = initialState, action) => {
                     }
                     return todo;
                 })
-                return {
+                return {...state,
                     todosList: newTodosList
                 }
             }
@@ -49,7 +52,7 @@ const todos = (state = initialState, action) => {
                 }
                 return true
             })
-            return {
+            return {...state,
                 todosList: newTodosList
             }
         }
@@ -63,9 +66,27 @@ const todos = (state = initialState, action) => {
                 }
                 return todo
             })
-            return {
+            return {...state,
                 todosList: todosListDone
             }
+        case 'LIMPAR_COMPLETAS': {
+            const newTodosList = state.todosList.filter(todo => {
+                if (todo.completa) {
+                    return false
+                }
+                return true
+            })
+            return {...state,
+                todosList: newTodosList
+            }
+        }
+        case 'FILTRAR': {
+           return {
+               ...state,
+               filter: action.payload.filter
+           }
+        }
+        
         default:
             return state;
 

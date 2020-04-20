@@ -8,7 +8,7 @@ const FormCont = styled.div `
   flex-direction: column;
   justify-content: center;
   height: fit-content;
-  width: 700px;
+  width: 100%;
 `
 const Button = styled.button `
     border: none;
@@ -81,10 +81,6 @@ class FormContainer extends React.Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {};
-};
-
 const mapDispatchToProps = (dispatch) => {
   return {
     addTarefa: (texto) => dispatch (addTarefa(texto))
@@ -92,8 +88,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 ) (FormContainer)

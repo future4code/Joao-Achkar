@@ -8,10 +8,10 @@ import { marcarTarefaComoCompleta, deletarTarefa } from '../actions/todos';
 const TarefaAdicionada = styled.div `
     display: flex;
     align-items: center;
-    justify-content: space-between;
+   /* justify-content: space-between;*/
     margin: 0;
     width: 100%;
-    padding-left: 50px;
+    
     font-size: 25px;
     height: 65px;
     border: none;
@@ -20,30 +20,45 @@ const TarefaAdicionada = styled.div `
     box-sizing: border-box;
 `
 const Delete = styled.button `
-  border: solid black 0.5px;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 15px;
-  color: red;
-  line-height: 20px;
-  cursor: pointer;
-  float: right;
-  margin-right: 30px;
-  font-size: 20px;
-  outline: none;
+    border: solid black 0.5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    color: red;
+    line-height: 20px;
+    cursor: pointer;
+    float: right;
+    margin-left: auto;
+    margin-right: 30px;
+    font-size: 20px;
+    outline: none;
+`
+const CompletaTarefa = styled.input `
+    margin: 0 20px 0 30px;
 `
 
 class TaskList extends React.Component {
 
     render() {  
       return (<div>
-        {this.props.taskList.map(task => (
+        {this.props.todosList.filter((task) => {
+          const filter = this.props.filter
+          if(filter === 'pendentes') {
+            return task.completa === false
+          }
+          if(filter === 'completas') {
+            return task.completa === true
+          }
+          if(filter === 'todas') return true
+        }).map(task => (
+          
             <TarefaAdicionada key={task.id} 
             onClick={() => this.props.marcarTarefaComoCompleta(task.id)}>
-              {task.texto} - Completa: {String(task.completa)}
+            <CompletaTarefa type="checkbox" checked={task.completa}/>
+              {task.texto}
               <Delete onClick={() => this.props.deletarTarefa(task.id)}>X</Delete>
               </TarefaAdicionada>
             ))}
@@ -54,7 +69,8 @@ class TaskList extends React.Component {
 
   const mapStateToProps = (state) => {
     return {
-        taskList: state.todos.todosList
+        todosList: state.todos.todosList,
+        filter: state.todos.filter
     }
   }
   const mapDispatchToProps = (dispatch) => {

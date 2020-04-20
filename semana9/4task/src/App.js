@@ -17,7 +17,7 @@ const SubCont = styled.div `
   display: block;
   justify-content: center;
   height: fit-content;
-  width: 700px;
+  width: 70%;
   box-shadow: 2px 4px 4px 0 rgba(0,0,0,.2), 0 25px 50px 0 rgba(0,0,0,.1);
 
 `
