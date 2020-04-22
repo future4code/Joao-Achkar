@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 import { routes } from '../Router'
+import { makeStyles } from '@material-ui/core/styles';
 import { CountryDropdown, RegionDropdown, CountryRegionData } from 'react-country-region-selector';
 
 const FormBox = styled.form `
@@ -22,6 +23,15 @@ const FormBox = styled.form `
 const MyLabels = styled.label `
   margin-top: 20px;
 `
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     '& .MuiTextField-root': {
+//       margin: theme.spacing(1),
+//       width: '25ch',
+//     },
+//   },
+// }));
+
 
 class AppForm extends Component {
   constructor(props) {
@@ -34,6 +44,8 @@ class AppForm extends Component {
       
     };
   }
+
+
 
 selectCountry (val) {
   this.setState({ country: val });
@@ -55,14 +67,15 @@ handleInputChange = event => {
 
 
   render() {
-    const { country, region } = this.state;
+    const { country } = this.state;
     const { goToHomePage } = this.props
+    // const classes = useStyles();
     return (
         <div> 
           <Button onClick={goToHomePage}>Voltar pra home</Button>  AppForm
           aqui vai o form pro usuário se candidatar a uma viagem
 
-          <FormBox onSubmit={this.handleFormSubmit}>
+          <FormBox  onSubmit={this.handleFormSubmit}>
             <MyLabels>Nome completo:</MyLabels>
             <TextField
             name="name"
@@ -82,13 +95,18 @@ handleInputChange = event => {
             value={this.state.form.age || "" }
             inputProps={{ min: 18, max: 100 }}
             />
-            <MyLabels>Por que você?</MyLabels>
+            {/* //<MyLabels>Por que você?</MyLabels> */}
             <TextField
             name="applicationText"
             required
             type="text"
             pattern="regex"
             onChange={this.handleInputChange}
+            id="standard-multiline-static"
+            label="Por que você?"
+            multiline
+            rows={8}
+            defaultValue=""
             />
             <MyLabels>Profissão:</MyLabels>
             <TextField
