@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import styled from "styled-components";
 import { routes } from '../Router'
+import { logIn } from '../../actions/login'
 
 
 const LoginWrapper = styled.form`
@@ -25,10 +26,14 @@ class LoginPage extends Component {
     };
   }
 
+   handleLogin = event => {
+     event.preventDefault();
+     this.props.logIn(this.state.email, this.state.password)
+   }
+
   handleFieldChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
+    const { name, value } = event.target
+    this.setState({ [name]: value });
   };
 
   render() {
@@ -36,7 +41,7 @@ class LoginPage extends Component {
     const { goToHomePage, goTripsPage } = this.props
 
     return (
-      <LoginWrapper>
+      <LoginWrapper onSubmit={this.handleLogin}>
         <button onClick={goToHomePage}>home</button>
         <TextField
           onChange={this.handleFieldChange}
@@ -60,7 +65,8 @@ class LoginPage extends Component {
 
 const mapDispatchToProps = dispatch => ({ 
     goToHomePage: () => dispatch(push(routes.home)),
-    goTripsPage: () => dispatch(push(routes.tripsPage))
+    goTripsPage: () => dispatch(push(routes.tripsPage)),
+    logIn: (email, password) => dispatch(logIn(email, password))
   
 })
 

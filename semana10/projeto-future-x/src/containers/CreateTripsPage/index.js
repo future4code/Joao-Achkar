@@ -52,9 +52,9 @@ class CreateTripsPage extends Component {
   };
 
   render() {
-   
+    const { goToHomePage } = this.props
     return (
-        <div> CreateTripsPage
+        <div> CreateTripsPage  <button onClick={goToHomePage}>Voltar pra Home</button>
          <p>criar form aqui que manda pra api dados de uma nova viagem disponível</p>    
 
          <FormBox onSubmit={this.handleFormSubmit}>
@@ -107,6 +107,7 @@ class CreateTripsPage extends Component {
             rows={8}
             defaultValue=""
             />
+            <MyLabels>Duração em dias:</MyLabels>
             <TextField
             name="durationInDays"
             required
@@ -129,7 +130,7 @@ class CreateTripsPage extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({ 
- 
+ goToHomePage: () => dispatch(push(routes.home)),
   
 })
 
@@ -138,3 +139,4 @@ export default connect (
     mapDispatchToProps
   )(CreateTripsPage);
   
+

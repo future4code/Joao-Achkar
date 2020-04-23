@@ -26,9 +26,9 @@ export const routes = {
   home: "/",
   appForm: "/appForm",
   tripsPage: "/tripsPage",
-  createPage: "/CreateTripsPage",
-  listPage: "/ListTripsPage",
-  detailsPage: "/TripDetailsPage"
+  createPage: "/tripsPage/CreateTripsPage",
+  listPage: "/tripsPage/ListTripsPage",
+  detailsPage: "/tripsPage/TripDetailsPage"
 
   // Outras rotas aqui
 };
