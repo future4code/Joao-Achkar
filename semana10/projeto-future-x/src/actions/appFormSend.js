@@ -2,20 +2,34 @@ import axios from "axios";
 
 const baseUrl = "https://us-central1-missao-newton.cloudfunctions.net/futureX/joaopfa-hamilton"
 
+export const setAllCandidates = (allCandidates) => {
+  return {
+    type: "SET_ALL_CANDIDATES",
+    payload: {
+      allCandidates: allCandidates
+      
+    }
+  }
+}
+
 // Ações Síncronas
 
 // Ações assíncronas
 
-  export const applyToTrip = postText => async (dispatch, getState) => {
+  export const registerCandidate = candidate => async (dispatch, getState) => {
     const body = {
-      text: postText
+      name,
+      age,
+      applicationText,
+      profession,
+      country
     };
     const response = await axios.post(
-      `${baseUrl}/trips/:id/apply`, body
+      `${baseUrl}/trips/NoIFVcOiSgTKTIPVZwXS/apply`, body
       );
       console.log(response.data.id)
   
-    dispatch(applyToTrip());
+    dispatch(setAllCandidates());
   };
   
 

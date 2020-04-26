@@ -52,7 +52,9 @@ selectCountry (val) {
 handleFormSubmit = event => {
   event.preventDefault()
   console.log(this.state.form)
+  this.props.registerCandidate (this.state.form)
   this.setState({ form: {} })
+  
 }
 
 handleInputChange = event => {
@@ -93,6 +95,15 @@ handleInputChange = event => {
             value={this.state.form.age || "" }
             inputProps={{ min: 18, max: 100 }}
             />
+            <MyLabels>Viagem preterida:</MyLabels>
+            <TextField
+            name="profession"
+            required
+            type=""
+            pattern="regex"
+            onChange={this.handleInputChange}
+            />
+
             {/* //<MyLabels>Por que você?</MyLabels> */}
             <TextField
             name="applicationText"
@@ -108,6 +119,7 @@ handleInputChange = event => {
             rows={8}
             defaultValue=""
             />
+
             <MyLabels>Profissão:</MyLabels>
             <TextField
             name="profession"
@@ -130,7 +142,8 @@ handleInputChange = event => {
 }
 
 const mapDispatchToProps = dispatch => ({ 
-    goToHomePage: () => dispatch(push(routes.home))
+    goToHomePage: () => dispatch(push(routes.home)),
+  registerCandidate: (form) => dispatch(registerCandidate(form))
   
 })
 
