@@ -21,6 +21,8 @@ export const getTasks = () => async (dispatch) => {
 }
 
 export const createTask = (body) => async (dispatch) => {
+  //  console.log("cheguei no create task")
+  //  console.log(body)
     try {
     const response = await axios.post(`https://us-central1-missao-newton.cloudfunctions.net/generic/joaopfa-hamilton`, body)
     alert("Tarefa criada com sucesso")

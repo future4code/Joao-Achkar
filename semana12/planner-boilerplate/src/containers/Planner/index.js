@@ -17,23 +17,31 @@ const Body = styled.div `
   height: 100%;
   border-bottom: dashed 2px black;
 `
+//const daysOfTheWeek = ["Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado", "Domingo"]
+
 class Planner extends React.Component {
   componentDidMount () {
     this.props.getTasks()
   }
+//   renderTasks = () => {
+//     const { tasks } = this.props 
+//     return (
+//       daysOfTheWeek.map((day) => {
+//         return (
+//           <DailyCard>
+//             <p>teste</p>
+//           </DailyCard>
+//         )
+//       })
+//     )
+// }
 
   render() {
     return <Body>
     <Header/>
     <GridBody>
-     
-      <DailyCard/>
-      <DailyCard/>
-      <DailyCard/>
-      <DailyCard/>
-      <DailyCard/>
-      <DailyCard/>
-      <DailyCard/>
+     <DailyCard/>
+
 
       </GridBody>
     </Body>
