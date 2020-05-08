@@ -23,18 +23,6 @@ class Planner extends React.Component {
   componentDidMount () {
     this.props.getTasks()
   }
-//   renderTasks = () => {
-//     const { tasks } = this.props 
-//     return (
-//       daysOfTheWeek.map((day) => {
-//         return (
-//           <DailyCard>
-//             <p>teste</p>
-//           </DailyCard>
-//         )
-//       })
-//     )
-// }
 
   render() {
     return <Body>
@@ -47,6 +35,7 @@ class Planner extends React.Component {
     </Body>
   }
 }
+
  const mapDispatchToProps = dispatch => {
    return{
      getTasks: () => dispatch(getTasks())

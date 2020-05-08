@@ -1,10 +1,10 @@
 import axios from 'axios'
 
 //////////////    Síncronas 
-export const setAllTasks = (tasksFromApi) => ({
+export const setAllTasks = (taskList) => ({
     type: "SET_ALL_TASKS",
     payload: {
-        taskList: tasksFromApi
+        taskList
     }
 })
 
