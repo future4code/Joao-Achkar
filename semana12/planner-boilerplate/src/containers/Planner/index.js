@@ -8,7 +8,7 @@ import Header from "../Header/index"
 const GridBody = styled.div `
   padding: 15px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
   height: 70vh;
   grid-gap: 20px;
 `
@@ -17,7 +17,6 @@ const Body = styled.div `
   height: 100%;
   border-bottom: dashed 2px black;
 `
-//const daysOfTheWeek = ["Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado", "Domingo"]
 
 class Planner extends React.Component {
   componentDidMount () {

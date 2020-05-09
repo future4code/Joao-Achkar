@@ -5,7 +5,9 @@ import { getTasks } from '../../actions/tasks';
 
 export const DayCard = styled.div`
     width: 100%;
-    height: 100%;
+    min-width: 100%;
+    height: fit-content;
+    padding: 0 15px 15px 0;
     border: dashed 2px black;
     background: #cdc6bb;
     border-radius: 10px;
