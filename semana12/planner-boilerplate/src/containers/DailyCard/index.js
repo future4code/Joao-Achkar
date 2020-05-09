@@ -11,6 +11,9 @@ export const DayCard = styled.div`
     border: dashed 2px black;
     background: #cdc6bb;
     border-radius: 10px;
+    :hover {
+       transform: translateY(-10px);
+    }
  `
 export const CardHeader = styled.div`
     width: 100%;
