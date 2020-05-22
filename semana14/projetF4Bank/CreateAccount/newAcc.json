@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Seu Madruga",
+    "cpf": 34949499323,
+    "birthDate": 15021993,
+    "balance": 102
+  },
+  {
+    "name": "Inhoinho",
+    "cpf": 35949499323,
+    "birthDate": 15021993,
+    "balance": 1021
+  },
+  {
+    "name": "Pops",
+    "cpf": 35949499323,
+    "birthDate": 15011993,
+    "balance": 1025
+  },
+  {
+    "name": "Prof Girafales",
+    "cpf": 35949499323,
+    "birthDate": 15011993,
+    "balance": 1025
+  },
+  {
+    "name": "Prof Linguiça",
+    "cpf": 35949499323,
+    "birthDate": 15011993,
+    "balance": 1025
+  }
+]
