@@ -28,5 +28,17 @@
     "cpf": 35949499323,
     "birthDate": 15011993,
     "balance": 1025
+  },
+  {
+    "name": "Fulano de Tal",
+    "cpf": 2039393932,
+    "birthDate": 24052000,
+    "balance": null
+  },
+  {
+    "name": "Ciclano de Tal",
+    "cpf": 2039393932,
+    "birthDate": 24052000,
+    "balance": 2555
   }
 ]

@@ -1,5 +1,7 @@
 import * as fs from 'fs';
-type user = {
+import {getAllAccounts} from './getAllAccounts'
+
+export type user = {
     name: string,
     cpf: number,
     birthDate: number,
@@ -8,13 +10,14 @@ type user = {
 
 let accounts: any = []
 
-const fileName: string = (process.argv[2])
+
+export const fileName: string = (process.argv[2])
 const userName: string = (process.argv[3])
 const cpf: number = Number(process.argv[4])
 const birthDate: number = Number(process.argv[5])
 const balance: number = Number(process.argv[6])
 
-const account: user = {
+export const account: user = {
     name: userName,
     cpf: cpf,
     birthDate: birthDate,
@@ -24,7 +27,7 @@ const account: user = {
 function createAccount(newAccount: user): void {
 try { 
     const data: Buffer = fs.readFileSync(fileName);
-    accounts = JSON.parse(data.toString());
+    accounts = getAllAccounts(newAccount) //JSON.parse(data.toString());
     accounts.push(account)
     fs.writeFileSync(fileName, JSON.stringify(accounts, null, 2));
     console.log("Conta criada com sucesso")
@@ -34,10 +37,4 @@ try {
 }
 
 createAccount(account)
-
-// type extractArray = {
-//     value: number,
-//     date: number,
-//     description: string,
-// }
 
