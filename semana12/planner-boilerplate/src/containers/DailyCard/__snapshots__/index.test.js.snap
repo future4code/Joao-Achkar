@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardHeader div test 1`] = `
+<div
+  className="sc-bwzfXH eJUgdU"
+/>
+`;
+
+exports[`CardHeader div test 2`] = `
+<h3
+  className="sc-htpNat idDyKC"
+/>
+`;
+
+exports[`DayCard div test 1`] = `
+<div
+  className="sc-bdVaJa gEDBe"
+/>
+`;
