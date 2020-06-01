@@ -5,9 +5,9 @@ type event = { name: string, description: string, date: string }
 let arrInfo: any = []
 
 function createEvents(
-    name: string, description: string, date: string
+    name: string, description: string, date: Date
 ): void {
-    if (name === "" || description === "" || date === "") {
+    if (name === "" || description === "" && (date < new Date())) {
         console.log("falta inserir detalhes do evento")
     }
     else {
