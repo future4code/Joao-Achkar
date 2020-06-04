@@ -6,7 +6,6 @@ export abstract class Missao {
     
     constructor(
         private idDaTurma: string,
-        private nomeDaTurma: string,
         private dataDeInicio: moment.Moment,
         private dataDeTermino: moment.Moment,
         private listaDeDocente: Docente[],
@@ -14,7 +13,6 @@ export abstract class Missao {
         private moduloAtual ?: number = undefined
     ){
         this.idDaTurma = idDaTurma, 
-        this.nomeDaTurma = nomeDaTurma,
         this.dataDeInicio = dataDeInicio,
         this.dataDeTermino = dataDeTermino
         this.moduloAtual = moduloAtual
@@ -23,8 +21,8 @@ export abstract class Missao {
         return this.idDaTurma;
       }
     
-      public getNomeDaTurma(name: string): string {
-        return this.nomeDaTurma;
+      public getNomeDaTurma(): string {
+        return this.nomeMissao;
       }
     
       public getDataDeInicio(): moment.Moment {
@@ -35,19 +33,19 @@ export abstract class Missao {
         return this.dataDeTermino;
       }
     
-      public getListaDeDocente(): number | undefined {
-        return this.listaDeDocente;
+      public getModuloAtual(): number | undefined {
+        return this.moduloAtual;
       }
     
-      public addTeacher(teacher: Teacher) {
-        this.teachers.push(teacher);
+      public addDocente(docente: Docente) {
+        this.listaDeDocente.push(docente);
       }
     
-      public addStudent(student: Student) {
-        this.students.push(student);
+      public addEstudante(estudante: Estudante) {
+        this.listaDeEstudantes.push(estudante);
       }
     
-      public setName(name: string) {
-        this.name = name;
+      public setNomeDaTurma(nomeMissao: string) {
+        this.nomeMissao = nomeMissao;
       }
 }

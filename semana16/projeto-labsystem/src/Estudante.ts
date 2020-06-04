@@ -10,11 +10,13 @@ export class Estudante implements Usuarisson {
     public name: string,
     public email: string,
     public dataNascimento: moment.Moment,
+    hobbies: string[]
     ){
         this.id = id
         this.name = name
         this.email = email
         this.dataNascimento = dataNascimento
+        this.hobbies = hobbies
     }
     public getIdade(): number {
         const today = moment()
