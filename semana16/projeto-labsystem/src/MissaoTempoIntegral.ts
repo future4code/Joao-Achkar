@@ -4,15 +4,16 @@ import {Estudante} from "./Estudante"
 
 export class MissaoTempoIntegral extends Missao {
     constructor (
-       nomeMissao: string = "",
+       nomeMissao: string,
        idDaTurma: string,
        dataDeInicio: moment.Moment,
        dataDeTermino: moment.Moment,
        listaDeDocente: Docente[] = [],
        listaDeEstudantes: Estudante[] = [],
-       moduloAtual ?: number = undefined
+       moduloAtual: number | undefined = undefined
     ){
         super ( 
+            nomeMissao,
             idDaTurma, 
             dataDeInicio, 
             dataDeTermino,

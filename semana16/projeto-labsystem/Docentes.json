@@ -1,0 +1,12 @@
+[
+  {
+    "id": "3242",
+    "name": "Raimundo",
+    "email": "raimundo@correa.com",
+    "dataNascimento": "1960-02-25T03:00:00.000Z",
+    "specialities": [
+      "Css",
+      "Backend"
+    ]
+  }
+]

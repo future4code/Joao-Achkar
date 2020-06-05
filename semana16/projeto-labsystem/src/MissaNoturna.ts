@@ -10,9 +10,10 @@ export class MissaoNoturna extends Missao {
         dataDeTermino: moment.Moment,
         listaDeDocente: Docente[] = [],
         listaDeEstudantes: Estudante[] = [],
-        moduloAtual ?: number = undefined
+        moduloAtual: number | undefined = undefined
         ){
-            super ( 
+           super ( 
+                nomeMissao,
                 idDaTurma, 
                 dataDeInicio, 
                 dataDeTermino,
