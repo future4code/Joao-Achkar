@@ -61,11 +61,12 @@ export abstract class Missao {
       }
       public getTodosEstudantes(): Estudante[] {
         const fileManager = new FileManager("Estudantes.json")
+        console.log(this.listaDeEstudantes)
         const estudantes = fileManager.readFile()
         return estudantes
       }
       public addEstudante(novoEstudante: Estudante): void {
-        const verificandoEstudante = this.listaDeEstudantes.find ((estudante) => {
+        const verificandoEstudante = this.listaDeEstudantes.find ((estudante: any) => {
           return novoEstudante.id === estudante.id
         })
         if (verificandoEstudante) {

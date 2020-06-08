@@ -10,6 +10,16 @@
     ]
   },
   {
+    "id": "242666",
+    "name": "Chiquinha",
+    "email": "chiquinha@madruga.com",
+    "dataNascimento": "1999-06-10T03:00:00.000Z",
+    "hobbies": [
+      "brincar de bola",
+      "comer sanduiche de presunto"
+    ]
+  },
+  {
     "id": "2425",
     "name": "Chaves",
     "email": "chaves@barril.com",

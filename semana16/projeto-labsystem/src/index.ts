@@ -4,6 +4,7 @@ import { MissaoNoturna } from "./MissaNoturna"
 import * as moment from "moment"
 import { ESPECIALIDADES } from './docente'
 import { MissaoTempoIntegral } from "./MissaoTempoIntegral";
+import { Missao } from "./Missao"
 
 //Estudantes
 const novoAluno: Estudante = new Estudante (
@@ -30,7 +31,7 @@ const novoAlunoTres: Estudante = new Estudante (
     ["zas, ee, zas", "comer sanduiche de presunto"]
     )
 const novoAlunoQuatro: Estudante = new Estudante (
-    "2426", 
+    "242666", 
     "Chiquinha", 
     "chiquinha@madruga.com",
     moment("10/06/1999", "DD/MM/YYYY"),
@@ -88,7 +89,7 @@ const novaTurmaIntegral: MissaoTempoIntegral = new MissaoTempoIntegral (
     [novoAluno, novoAlunoDois],
     3
 )
-console.log(novaTurmaIntegral)
+//console.log(novaTurmaIntegral)
 
 //Missão Noturna
 const novaTurmaNoturna: MissaoNoturna = new MissaoNoturna (
@@ -100,12 +101,9 @@ const novaTurmaNoturna: MissaoNoturna = new MissaoNoturna (
     [novoAluno, novoAlunoTres],
     7
 )
-console.log(novaTurmaNoturna.getNomeDaTurma())
+//console.log(novaTurmaNoturna.getNomeDaTurma())
 
-novaTurmaIntegral.addDocente(novoDocenteDois)
+//novaTurmaIntegral.addDocente(novoDocenteDois)
 novaTurmaIntegral.addEstudante(novoAluno)
-novaTurmaIntegral.addEstudante(novoAlunoDois)
-novaTurmaIntegral.addEstudante(novoAlunoTres)
+//novaTurmaIntegral.addDocente(novoDocenteDois)
 
-//Ai, cansei um pouco. Vou entregar pela metade. 
-//Ainda preciso entender muito do que eu fiz, rs
