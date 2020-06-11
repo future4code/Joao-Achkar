@@ -66,3 +66,19 @@ RIGHT JOIN MovieCast mc ON mc.movie_id = m.id;
 
 ### c) Escreva uma query que retorne a média das avaliações de todos os filmes agrupada em relação aos filmes (mesmo que ele não tenha sido avaliado ainda)
 SELECT AVG(r.rate), m.id as id_filme, m.name FROM Movie m JOIN Rating r ON m.id = r.movie_id GROUP BY (m.id);
+
+## Exercício 5
+### a) Explique, com suas palavras essa query. Por que há a necessidade de dois JOIN?
+
+Porque o JOIN é o responsável pela conexão entre tabelas
+
+### b) Altere a query para que ela retorne o id e o título do filme, e o id e o nome do ator. Coloque alias para facilitar o endentimento do retorno da query
+SELECT m.id, m.name, a.id as id_ator, a.name FROM Movie m LEFT JOIN MovieCast mc ON m.id = mc.movie_id JOIN Actor a ON a.id = mc.actor_id;
+
+### c) A query abaixo deveria ser a resposta do item b. Tente rodá-la. Anote e explique o resultado.
+Retornou tabela com id de cada filme e id de cada ator que atuou em cada filme
+Não entendi como a MovieCast atuou ali
+
+## Exercício 6
+
+### b)
