@@ -37,7 +37,7 @@ try {
     throw new Error(err.message);
 }
 
-///////////////////////////////////////CRIA USUÁRIO NA TABLE USER ////////////////////////
+///////////////////////////////////////FUNÇÃO CRIA USUÁRIO NA TABLE USER ////////////////////////
 
 const createUser = async (id: string, name: string, nickname: string, email: string): Promise<void> => {
     try {
@@ -54,7 +54,7 @@ const createUser = async (id: string, name: string, nickname: string, email: str
     }
 }
 
-///////////////////////////////////////PEGA USUÁRIO NA TABLE USER //////////////////////////////
+///////////////////////////////////////FUNÇÃO PEGA USUÁRIO NA TABLE USER //////////////////////////////
 const getUserBuilder = async (id: string): Promise<any> => {
     try {
         const result = await connection.select("*").from ("User").where({id:id})
@@ -64,6 +64,25 @@ const getUserBuilder = async (id: string): Promise<any> => {
     }
 }
 //getUserBuilder('1591992542886')
+
+////////////////////////////////// FUNÇÃO DE EDITAR USUÁRIO ///////////////////////////////////
+const editUser = async(id: string, name: string, nickname: string) => {
+    try {
+        const result = await connection.raw (
+            `
+            UPDATE User
+            SET name = "${name}", nickname = "${nickname}"
+            WHERE id = "${id}"
+            `
+        )
+        return result
+    }catch(err){
+        throw new Error("Tem como alterar agora não")
+    }
+}
+console.log(editUser("002", "Ronaldo Gaucho", "r10"))
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 const app = express()
@@ -99,17 +118,26 @@ app.get("/user/:id", async (req: Request, res: Response) => {
     }
 
 });
-// const getUserById = async (req: Request, res: Response): Promise<any> => {
-//     try {
-//         const getUserId = {
-//             id: req.body.id,
-//         }
-//     await getUser(getUserId.id)
 
-//     } catch(err){
-//         res.status(400).send({message:"tem usuário com esse id não moço"})
-//     }
-// }
+//////////////////////////////// END POINT EDITAR NOME E APELIDO USUÁRIO  //////////////////////////
+
+const endPointEditUser = async (req: Request, res: Response): Promise<any> => {
+    try{
+        const id = req.params.id
+        const name = req.body.name 
+        const nickname = req.body.nickname
+        
+        await editUser (id, name, nickname)
+
+        res.status(200).send({message: `As informações de ${id} foram atualizadas pra ${name} e ${nickname}`});
+    }catch(err){
+        res.status(400).send({error: err.message});
+    }
+}
+
+
+app.put("/user/edit/:id", endPointEditUser)
+
 
 
 
