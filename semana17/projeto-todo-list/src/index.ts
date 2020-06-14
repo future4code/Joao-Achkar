@@ -109,7 +109,7 @@ const createTask = async (
     title: string, 
     description: string,
     status: string,
-    limitDate: Date,
+    limitDate: string,
     creatorUserId: string
     ): Promise<void> => {
         try {
@@ -124,14 +124,14 @@ const createTask = async (
             throw new Error(err.message);
         }
     }
-    createTask(
-              "001", 
-              "Lavar bike", 
-              "Pegar banquinho, encher garrafas dágua, pegar escovas e desengraxante e sentar na varanda pra lavar a corrente da bike.",
-              "to_do",
-              new Date("2020-08-07"),
-              "001"
-              )
+    /*createTask(
+              "004", 
+              "Pagar o aluguel", 
+              "Trabalhar pra pagar o aluguel",
+              "doing",
+              "2020-09-07",
+              "1591992542886"
+              )*/
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 const app = express()
@@ -185,6 +185,24 @@ const endPointEditUser = async (req: Request, res: Response): Promise<any> => {
 }
 app.put("/user/edit/:id", endPointEditUser)
 
+/////////////////////////////////END POINT CRIAR TAREFA ///////////////////////////////////////////////
+const endPointTask = async (req: Request, res: Response): Promise<any> => {
+    try {
+        const newTask = {
+            taskId: Date.now().toString(),
+            title: req.body.title,
+            description: req.body.description,
+            status: req.body.status,
+            limitDate: req.body.limitDate,
+            creatorUserId: req.body.creatorUserId
+        }
+        await createTask(newTask.taskId, newTask.title, newTask.description, newTask.status, newTask.limitDate, newTask.creatorUserId)
+        res.status(200).send({message: "Tarefa adicionada com sucesso"})
+    } catch(err){
+        res.status(400).send({message:"Não foi possível adicionar a tarefa"})
+    }    
+}
+app.post("/task", endPointTask)
 
 
 
