@@ -80,9 +80,58 @@ const editUser = async(id: string, name: string, nickname: string) => {
         throw new Error("Tem como alterar agora não")
     }
 }
-console.log(editUser("002", "Ronaldo Gaucho", "r10"))
+//console.log(editUser("002", "Ronaldo Gaucho", "r10"))
+/////////////////////////////////////////////// FUNÇÃO QUE CRIA TABELA DE TASKS ///////////////////////////////////////
+const createTasksTable = async(): Promise<any> => {
+    try {
+        await connection.raw (
+            `
+            CREATE TABLE Tasks (
+                taskId VARCHAR(255) PRIMARY KEY,
+                title VARCHAR(255) NOT NULL,
+                description TEXT NOT NULL,
+                status ENUM("to_do", "doing", "done") NOT NULL DEFAULT "to_do",
+                limitDate DATE NOT NULL,
+                creatorUserId VARCHAR(255) NOT NULL,
+                FOREIGN KEY (creatorUserId) REFERENCES User(id)
+            );
+            `
+        )
+    } catch(err) {
+        throw new Error(err.message)
+    }
+}
+//createTasksTable()
 
-
+/////////////////////////////////////////////// FUNÇÃO QUE CRIA TASKS NA TABELA DE TASKS///////////////////////////////////////
+const createTask = async (
+    taskId: string, 
+    title: string, 
+    description: string,
+    status: string,
+    limitDate: Date,
+    creatorUserId: string
+    ): Promise<void> => {
+        try {
+            await connection.raw(
+              `
+            INSERT INTO Tasks VALUES (
+                "${taskId}", "${title}", "${description}", "${status}", "${limitDate}", "${creatorUserId}"
+            )
+              `  
+            )
+        } catch (err) {
+            throw new Error(err.message);
+        }
+    }
+    createTask(
+              "001", 
+              "Lavar bike", 
+              "Pegar banquinho, encher garrafas dágua, pegar escovas e desengraxante e sentar na varanda pra lavar a corrente da bike.",
+              "to_do",
+              new Date("2020-08-07"),
+              "001"
+              )
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 const app = express()
@@ -134,8 +183,6 @@ const endPointEditUser = async (req: Request, res: Response): Promise<any> => {
         res.status(400).send({error: err.message});
     }
 }
-
-
 app.put("/user/edit/:id", endPointEditUser)
 
 
