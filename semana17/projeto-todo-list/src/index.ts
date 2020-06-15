@@ -60,7 +60,7 @@ const getUserBuilder = async (id: string): Promise<any> => {
         const result = await connection.select("*").from ("User").where({id:id})
         return result
     } catch(err) {
-        throw new Error ("tem esse usuário não")
+        throw new Error ("tem esse usuário não, moço")
     }
 }
 //getUserBuilder('1591992542886')
@@ -132,6 +132,17 @@ const createTask = async (
               "2020-09-07",
               "1591992542886"
               )*/
+
+/////////////////////////////////////////////// FUNÇÃO QUE PEGA TASKS PELO ID///////////////////////////////////////
+const getTaskBuilder = async (taskId:string): Promise<any> => {
+    try{
+        const result = await connection.select("*").from ("Tasks").where({taskId: taskId})
+        return result
+    } catch(err){
+        throw new Error ("Tarefa não encontrada")
+    }
+} 
+
 //////////////////////////////////////////////////////////////////////////////////////////////
 
 const app = express()
@@ -186,7 +197,7 @@ const endPointEditUser = async (req: Request, res: Response): Promise<any> => {
 app.put("/user/edit/:id", endPointEditUser)
 
 /////////////////////////////////END POINT CRIAR TAREFA ///////////////////////////////////////////////
-const endPointTask = async (req: Request, res: Response): Promise<any> => {
+const endPointCreateTask = async (req: Request, res: Response): Promise<any> => {
     try {
         const newTask = {
             taskId: Date.now().toString(),
@@ -202,8 +213,19 @@ const endPointTask = async (req: Request, res: Response): Promise<any> => {
         res.status(400).send({message:"Não foi possível adicionar a tarefa"})
     }    
 }
-app.post("/task", endPointTask)
+app.post("/task", endPointCreateTask)
+/////////////////////////////////END POINT PEGAR TAREFA PELO ID ///////////////////////////////////////////////
+const endPointGetTaskById = async (req: Request, res: Response) => {
+    try {
+        const taskId = req.params.taskId;
+        const result = await getTaskBuilder(taskId)
 
+        res.status(200).send(result[0]);
+    } catch(err) {
+        res.status(404).send({message:`Não foi possível encontrar a tarefa de id ${getTaskBuilder.arguments}`})
+    }
+}
+app.get("/task/:taskId", endPointGetTaskById)
 
 
 const server = app.listen(process.env.PORT || 3000, () => {
