@@ -7,6 +7,9 @@ import { Request, Response } from "express"
 
 dotenv.config();
 
+const app = express()
+app.use(express.json())
+
 const connection = knex({
     client: "mysql",
     connection: {
@@ -18,6 +21,15 @@ const connection = knex({
     },
 });
 
+
+const server = app.listen(process.env.PORT || 3000, () => {
+    if (server) {
+        const address = server.address() as AddressInfo;
+        console.log(`Server is running in http://localhost:${address.port}`);
+    } else {
+        console.error(`Failure upon starting server.`);
+    }
+});
 ////////////////////////////////////////////// TABELA USUÁRIO //////////////////////////////////
 try {
     const createTableUser = async (): Promise<void> => {
@@ -145,8 +157,6 @@ const getTaskBuilder = async (taskId:string): Promise<any> => {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-const app = express()
-app.use(express.json())
 
 ////////////////////////////////// END POINT CRIAR USUÁRIO ///////////////////////////////////
 const createEndPointUser = async (req: Request, res: Response): Promise<any> => {
@@ -222,17 +232,8 @@ const endPointGetTaskById = async (req: Request, res: Response) => {
 
         res.status(200).send(result[0]);
     } catch(err) {
-        res.status(404).send({message:`Não foi possível encontrar a tarefa de id ${getTaskBuilder.arguments}`})
+        res.status(400).send({message:`Não foi possível encontrar a tarefa de id ${getTaskBuilder.arguments}`})
     }
 }
 app.get("/task/:taskId", endPointGetTaskById)
 
-
-const server = app.listen(process.env.PORT || 3000, () => {
-    if (server) {
-        const address = server.address() as AddressInfo;
-        console.log(`Server is running in http://localhost:${address.port}`);
-    } else {
-        console.error(`Failure upon starting server.`);
-    }
-});
