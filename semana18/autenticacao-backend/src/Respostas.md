@@ -13,3 +13,5 @@ O código em questão adiciona na tabela userTableName uma linha com id, email e
                     id VARCHAR(255) PRIMARY KEY,
                     email VARCHAR(255) NULL,
                     password VARCHAR(255) UNIQUE NOT NULL,
+
+### c) 
