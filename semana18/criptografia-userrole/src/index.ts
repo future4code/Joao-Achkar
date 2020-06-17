@@ -8,7 +8,7 @@ import { HashManager } from "./services/HashManager";
 
 dotenv.config();
 
-const app = express();
+const app = express(); //o express serve só pro seu código ficar disponível pela rede, poder acessar via postman por exemplo
 
 app.use(express.json());
 

@@ -48,7 +48,7 @@ export class UserDatabase {
       return result[0];
     }
 
-    public async deleteUser(id: string): Promise<void> {
+    public async deleteUser(id: string): Promise<any> {
       await this.connection
       .delete()
       .from(UserDatabase.TABLE_NAME)
