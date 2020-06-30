@@ -18,10 +18,13 @@ export function verifyAge(casino: Casino, users: User[]): Result {
         } else {
           unallowed.push(user);
         }
-        break;
+        
       }
     }
   
+    console.log(unallowed)
+    console.log(users)
+
     return {
       brazilians: {
         allowed: allowed
