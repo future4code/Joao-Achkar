@@ -9,3 +9,7 @@ A segunda implementação passa o validator como parâmetro já da função. Mas
 ```
 Devemos criar um mock da função de validar o character, por ser uma função que recebe mais parâmetros e possibilita mais erros que devem ser previnidos através de testes
 ```
+
+```
+Não entendi porque meu teste da 5-b rodou, sem o nome da kitana
+```
