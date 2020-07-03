@@ -4,8 +4,10 @@ import { TokenGenerator } from "../services/tokenGenerator";
 import { UserDatabase } from "../data/UserDatabase";
 import { HashGenerator } from "../services/hashGenerator";
 import { IdGenerator } from "../services/idGenerator";
+import { BaseDataBase } from "../data/BaseDatabase";
 
-export class UserController {
+export class UserController  extends BaseDataBase {
+  protected tableName: string = "table_usernames";
   private static UserBusiness = new UserBusiness(
     new UserDatabase(),
     new HashGenerator(),
@@ -25,6 +27,7 @@ export class UserController {
     } catch (err) {
       res.status(err.errorCode || 400).send({ message: err.message });
     }
+    await this.destroyConnection()
   }
 
   public async login(req: Request, res: Response) {
@@ -36,5 +39,6 @@ export class UserController {
     } catch (err) {
       res.status(err.errorCode || 400).send({ message: err.message });
     }
+    await this.destroyConnection()
   }
 }

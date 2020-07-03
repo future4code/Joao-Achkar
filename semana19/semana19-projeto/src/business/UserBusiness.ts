@@ -5,8 +5,10 @@ import { HashGenerator } from "../services/hashGenerator";
 import { TokenGenerator } from "../services/tokenGenerator";
 import { NotFoundError } from "../errors/NotFoundError";
 import { InvalidParameterError } from "../errors/InvalidParameterError";
+import { BaseDataBase } from "../data/BaseDatabase";
 
 export class UserBusiness {
+
   constructor(
     private userDatabase: UserDatabase,
     private hashGenerator: HashGenerator,
