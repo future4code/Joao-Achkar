@@ -1,0 +1,21 @@
+{
+  "name": "aula_lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@types/uuid": "^8.0.0",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.50",
+    "typescript": "^3.9.6",
+    "uuid": "^8.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node build/exercicio2.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
