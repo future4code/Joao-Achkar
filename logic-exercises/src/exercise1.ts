@@ -20,7 +20,7 @@ function Exercise1a(arrayDeNumber: number[]):object {
     }
 }
 
-console.log(Exercise1a(arrayEx))
+//console.log(Exercise1a(arrayEx))
 
 //b) Faça uma função que receba um array de números 
 //e devolve um objeto que contenha as informações: maior número e menor número 
@@ -41,4 +41,4 @@ function revelaMaiorEMenor(array: number[]) {
  menorNumero: numeroMenor
 }
 }
-console.log(revelaMaiorEMenor(arrayNumeros))
+//console.log(revelaMaiorEMenor(arrayNumeros))
