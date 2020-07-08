@@ -1,0 +1,75 @@
+b)Qual o retorno da função se ela receber um objeto vazio de entrada?
+O retorno da função recebendo objeto vazio é:
+{
+  "statusCode": 400,
+  "body": "{\"message\":\"Missing input\"}"
+}
+
+c)Qual o retorno da função se ela receber este objeto como entrada:
+{
+	"user": {
+		"name": "Astrodev"
+	}
+}
+
+Segue retornando erro de missing input
+{
+  "statusCode": 400,
+  "body": "{\"message\":\"Missing input\"}"
+}
+ 
+d)Qual o retorno da função se ela receber este objeto como entrada:
+{
+  "user": {
+		"info": {
+			"name": "Astrodev"
+		}
+  }
+}
+
+Agora faltou e-mail 
+{
+  "statusCode": 400,
+  "body": "{\"message\":\"Missing email\"}"
+}
+
+e)Qual o retorno da função se ela receber este objeto como entrada:
+{
+  "user": {
+		"info": {
+			"name": "Astrodev",
+			"email": "astrodev@f4.com.br",
+			"password": "12345"
+		}
+  }
+}
+{
+  "statusCode": 400,
+  "body": "{\"message\":\"Invalid password\"}"
+}
+
+f)
+{
+  "statusCode": 200,
+  "body": "{\"message\":\"User is correct\"}"
+}
+
+g)  if (!user.email) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: "Missing email" })
+    }
+  } else if(user.email.indexOf("@") === -1 || (user.email.indexOf(".com") === -1)){
+        return {
+            statusCode: 422,
+            body: JSON.stringify({ message: "Invalid email" })
+        }
+    };
+
+
+h) Mesmo objeto do exercício f)
+
+Exercício 2
+Done
+
+Exercício 3
