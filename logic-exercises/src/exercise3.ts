@@ -24,4 +24,4 @@ function verifyStringsNoMatterCase(stringOne: string, stringTwo: string):boolean
         return false
     }
 }
-console.log(verifyStringsNoMatterCase("rabanete", "Rabanete"))
+console.log(verifyStringsNoMatterCase("maçã", "Maçã"))
